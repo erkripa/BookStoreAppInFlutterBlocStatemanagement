@@ -142,7 +142,7 @@ class ThemeCubit extends Cubit<ThemeState> {
           color: AppColors.primaryColor,
           fontWeight: FontWeight.bold,
         ),
-        hintStyle: AppStyles.style14Normal.copyWith(
+        hintStyle: AppStyles.style13Normal.copyWith(
           color: AppColors.lightBodyTextColor.withAlpha(140),
         ),
         errorStyle: AppStyles.style14Normal.copyWith(

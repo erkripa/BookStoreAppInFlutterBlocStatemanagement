@@ -14,6 +14,7 @@ class AyushFilledButton extends StatelessWidget {
     this.labelColor,
     this.onTap,
     this.padding,
+    this.margin,
     this.fontSize,
     this.width,
     this.height,
@@ -28,6 +29,7 @@ class AyushFilledButton extends StatelessWidget {
   final Widget? suffix;
   final VoidCallback? onTap;
   final EdgeInsets? padding;
+  final EdgeInsets? margin;
   final double? fontSize;
   final double? width;
   final double? height;
@@ -41,6 +43,7 @@ class AyushFilledButton extends StatelessWidget {
         width: width,
         height: height,
         padding: padding,
+        margin: margin,
         constraints: BoxConstraints(maxWidth: Dm.screenWidth),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(borderRadius ?? Dm.four),
