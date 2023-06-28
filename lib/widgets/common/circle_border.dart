@@ -4,13 +4,13 @@ import 'package:flutter/material.dart';
 
 class AyushCircleBorder extends StatelessWidget {
   const AyushCircleBorder({
-    super.key,
+    Key? key,
     this.child,
     this.radius,
     this.color,
     this.borderColor,
     this.borderWidth,
-  });
+  }) : super(key: key);
 
   final Widget? child;
   final double? radius;

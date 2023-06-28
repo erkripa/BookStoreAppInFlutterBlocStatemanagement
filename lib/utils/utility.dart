@@ -352,7 +352,7 @@ abstract class AppUtility {
               ),
               TextButton(
                 onPressed: onTap,
-                child: const Text( 'RETRY'),
+                child: const Text('RETRY'),
               ),
             ],
           ),

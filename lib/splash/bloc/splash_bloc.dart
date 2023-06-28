@@ -7,6 +7,7 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
   SplashBloc() : super(SplashState()) {
     on<SplasEventInitial>(_splashInitialEvent);
     on<SplasEventCompleted>(_splashCompletedEvent);
+    _onCreate();
   }
 
   void _splashInitialEvent(SplasEventInitial event, Emitter<SplashState> emit) {
@@ -18,5 +19,9 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
     return emit(state.copyWith(status: Status.done));
   }
 
-  
+  void _onCreate() {
+    add(SplasEventInitial());
+    Future.delayed(const Duration(seconds: 2))
+        .then((value) => add(SplasEventCompleted()));
+  }
 }

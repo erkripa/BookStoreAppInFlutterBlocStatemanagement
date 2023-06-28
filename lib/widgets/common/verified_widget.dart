@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 
 class VerifiedWidget extends StatelessWidget {
   const VerifiedWidget({
-    super.key,
+    Key? key,
     required this.verifiedCategory,
     this.size,
-  });
+  }) : super(key: key);
 
   final String verifiedCategory;
   final double? size;

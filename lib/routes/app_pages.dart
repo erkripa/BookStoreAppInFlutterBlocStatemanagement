@@ -1,6 +1,7 @@
 import 'package:course_app/modules/register/bloc/register_bloc.dart';
 import 'package:course_app/modules/register/pages/register_page.dart';
 import 'package:course_app/splash/bloc/splash_bloc.dart';
+import 'package:course_app/utils/utility.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:course_app/splash/splash_page.dart';
@@ -37,8 +38,10 @@ abstract class AppPages {
         .where((PageEntity pageEntity) => pageEntity.routName == settings.name);
 
     if (result.isNotEmpty) {
+      AppUtility.log("Page Created => '${settings.name}'");
       return MaterialPageRoute(builder: (_) => result.first.page.call());
     }
+    AppUtility.log("Initial Splash Page Created => '${settings.name}'");
     return MaterialPageRoute(builder: (_) => const SplashPage());
   }
 }

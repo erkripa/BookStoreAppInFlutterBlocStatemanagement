@@ -7,7 +7,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../bloc/register_event.dart';
 
 class RegisterPage extends StatelessWidget {
-  const RegisterPage({super.key});
+  const RegisterPage({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +18,9 @@ class RegisterPage extends StatelessWidget {
 }
 
 class RegisterForm extends StatelessWidget {
-  const RegisterForm({super.key});
+  const RegisterForm({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

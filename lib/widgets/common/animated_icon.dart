@@ -5,13 +5,13 @@ const double _kDefaultAnimationAngle = 2 * 3.14;
 
 class NxAnimatedIcon extends StatelessWidget {
   const NxAnimatedIcon({
-    super.key,
+    Key? key,
     required this.icon,
     required this.controller,
     this.color,
     this.size,
     this.angle,
-  });
+  }) : super(key: key);
 
   final IconData icon;
   final Color? color;

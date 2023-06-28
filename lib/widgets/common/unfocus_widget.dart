@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class UnFocusWidget extends StatelessWidget {
-  const UnFocusWidget({super.key, required this.child, this.opaque});
+  const UnFocusWidget({Key? key, required this.child, this.opaque})
+      : super(key: key);
 
   final Widget child;
   final bool? opaque;
