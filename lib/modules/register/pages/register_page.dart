@@ -103,7 +103,7 @@ class _RegisterButton extends StatelessWidget {
                   print(state);
                   context.read<RegisterBloc>().add(SubmitEvent());
                 },
-                child: const Text('Register'),
+                child: Text('Register'),
               );
       },
     );
