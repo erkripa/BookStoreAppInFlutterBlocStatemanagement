@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:course_app/constants/app_strings.dart';
 import 'package:course_app/extensions/string_extensions.dart';
 import 'package:course_app/utils/app_colors.dart';
-import 'package:course_app/utils/dm.dart';
+import 'package:course_app/utils/dimens.dart';
 import 'package:course_app/utils/styles/app_text_style.dart';
 import 'package:course_app/utils/styles/decorations.dart';
 import 'package:course_app/widgets/common/loading_widget.dart';
@@ -81,15 +81,15 @@ abstract class AppUtility {
           backgroundColor: Colors.transparent,
           body: Center(
             child: Container(
-              padding: Dm.edgeInsets16,
-              margin: Dm.edgeInsets16,
+              padding: Dimens.edgeInsets16,
+              margin: Dimens.edgeInsets16,
               decoration: BoxDecoration(
                 color: Theme.of(Get.context!).dialogTheme.backgroundColor,
-                borderRadius: BorderRadius.circular(Dm.eight),
+                borderRadius: BorderRadius.circular(Dimens.eight),
               ),
               constraints: BoxConstraints(
-                maxWidth: Dm.screenWidth / 2.8,
-                maxHeight: Dm.screenHeight,
+                maxWidth: Dimens.screenWidth / 2.8,
+                maxHeight: Dimens.screenHeight,
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -97,7 +97,7 @@ abstract class AppUtility {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   const LoadingWidget(),
-                  Dm.boxHeight12,
+                  Dimens.boxHeight12,
                   Text(
                     message ?? AppStrings.pleaseWait,
                     style: AppStyles.style14Normal.copyWith(
@@ -129,18 +129,18 @@ abstract class AppUtility {
         removeBottom: true,
         child: ConstrainedBox(
           constraints: BoxConstraints(
-            maxHeight: Dm.screenHeight,
-            maxWidth: Dm.hundred * 6,
+            maxHeight: Dimens.screenHeight,
+            maxWidth: Dimens.hundred * 6,
           ),
           child: Padding(
-            padding: Dm.edgeInsets12,
+            padding: Dimens.edgeInsets12,
             child: Align(
               alignment: Alignment.center,
               child: Material(
                 type: MaterialType.card,
                 color: Theme.of(Get.context!).dialogBackgroundColor,
                 borderRadius: BorderRadius.all(
-                  Radius.circular(Dm.four),
+                  Radius.circular(Dimens.four),
                 ),
                 child: child,
               ),
@@ -167,45 +167,45 @@ abstract class AppUtility {
         removeBottom: true,
         child: ConstrainedBox(
           constraints: BoxConstraints(
-            maxHeight: Dm.screenHeight,
-            maxWidth: Dm.hundred * 6,
+            maxHeight: Dimens.screenHeight,
+            maxWidth: Dimens.hundred * 6,
           ),
           child: Padding(
-            padding: Dm.edgeInsets12,
+            padding: Dimens.edgeInsets12,
             child: Align(
               alignment: Alignment.center,
               child: Material(
                 type: MaterialType.card,
                 color: Theme.of(Get.context!).dialogBackgroundColor,
                 borderRadius: BorderRadius.all(
-                  Radius.circular(Dm.four),
+                  Radius.circular(Dimens.four),
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Dm.boxHeight8,
+                    Dimens.boxHeight8,
                     Padding(
-                      padding: Dm.edgeInsetsHorizDefault,
+                      padding: Dimens.edgeInsetsHorizDefault,
                       child: Text(
                         AppStrings.delete,
                         textAlign: TextAlign.center,
                         style: AppStyles.style20Bold,
                       ),
                     ),
-                    Dm.boxHeight10,
+                    Dimens.boxHeight10,
                     Padding(
-                      padding: Dm.edgeInsetsHorizDefault,
+                      padding: Dimens.edgeInsetsHorizDefault,
                       child: Text(
                         AppStrings.deleteConfirmationText,
                         textAlign: TextAlign.center,
                         style: AppStyles.style14Normal,
                       ),
                     ),
-                    Dm.boxHeight8,
+                    Dimens.boxHeight8,
                     Padding(
-                      padding: Dm.edgeInsetsHorizDefault,
+                      padding: Dimens.edgeInsetsHorizDefault,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -215,21 +215,21 @@ abstract class AppUtility {
                               color: AppColors.errorColor,
                             ),
                             onTap: AppUtility.closeDialog,
-                            padding: Dm.edgeInsets8,
+                            padding: Dimens.edgeInsets8,
                           ),
-                          Dm.boxWidth16,
+                          Dimens.boxWidth16,
                           ASTextButton(
                             label: AppStrings.yes,
                             labelStyle: AppStyles.style16Bold.copyWith(
                               color: AppColors.successColor,
                             ),
                             onTap: () => onDelete(),
-                            padding: Dm.edgeInsets8,
+                            padding: Dimens.edgeInsets8,
                           ),
                         ],
                       ),
                     ),
-                    Dm.boxHeight8,
+                    Dimens.boxHeight8,
                   ],
                 ),
               ),
@@ -276,8 +276,8 @@ abstract class AppUtility {
         ),
       ),
       backgroundColor: AppColors.errorColor,
-      margin: Dm.edgeInsets16,
-      borderRadius: Dm.fifteen,
+      margin: Dimens.edgeInsets16,
+      borderRadius: Dimens.fifteen,
       snackStyle: SnackStyle.FLOATING,
     );
   }
@@ -291,20 +291,20 @@ abstract class AppUtility {
         onWillPop: () async => false,
         child: Scaffold(
           body: Padding(
-            padding: Dm.edgeInsets16,
+            padding: Dimens.edgeInsets16,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  width: Dm.screenWidth * 0.75,
-                  height: Dm.screenWidth * 0.75,
+                  width: Dimens.screenWidth * 0.75,
+                  height: Dimens.screenWidth * 0.75,
                   // child: const RiveAnimation.asset(
                   //   RiveAssets.error,
                   //   alignment: Alignment.center,
                   // ),
                 ),
-                Dm.boxHeight16,
+                Dimens.boxHeight16,
                 Text(
                   'No Internet!',
                   textAlign: TextAlign.center,
@@ -312,7 +312,7 @@ abstract class AppUtility {
                     color: AppColors.errorColor,
                   ),
                 ),
-                Dm.boxHeight20,
+                Dimens.boxHeight20,
               ],
             ),
           ),
@@ -328,21 +328,21 @@ abstract class AppUtility {
       onWillPop: () async => false,
       child: Scaffold(
         body: Padding(
-          padding: Dm.edgeInsets16,
+          padding: Dimens.edgeInsets16,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: [
               SizedBox(
-                width: Dm.screenWidth * 0.75,
-                height: Dm.screenWidth * 0.75,
+                width: Dimens.screenWidth * 0.75,
+                height: Dimens.screenWidth * 0.75,
                 // child: const RiveAnimation.asset(
                 //   RiveAssets.error,
                 //   alignment: Alignment.center,
                 // ),
               ),
-              Dm.boxHeight16,
+              Dimens.boxHeight16,
               Text(
                 'No Internet!',
                 textAlign: TextAlign.center,
@@ -372,7 +372,7 @@ abstract class AppUtility {
     closeBottomSheet();
     Get.bottomSheet(
       Padding(
-        padding: Dm.edgeInsets8_0,
+        padding: Dimens.edgeInsets8_0,
         child: Column(
           mainAxisAlignment: mainAxisAlignment ?? MainAxisAlignment.start,
           crossAxisAlignment: crossAxisAlignment ?? CrossAxisAlignment.center,
@@ -384,15 +384,15 @@ abstract class AppUtility {
               decoration: KDecoration.boxDecoration
                   .copyWith(color: AppColors.lightGrayColor),
             ),
-            Dm.boxHeight16,
+            Dimens.boxHeight16,
             ...children
           ],
         ),
       ),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(borderRadius ?? Dm.zero),
-          topRight: Radius.circular(borderRadius ?? Dm.zero),
+          topLeft: Radius.circular(borderRadius ?? Dimens.zero),
+          topRight: Radius.circular(borderRadius ?? Dimens.zero),
         ),
       ),
       isScrollControlled: isScrollControlled ?? false,
@@ -435,7 +435,7 @@ abstract class AppUtility {
         return Align(
           alignment: Alignment.topCenter,
           child: Container(
-            padding: Dm.defaultPadding,
+            padding: Dimens.defaultPadding,
             decoration: BoxDecoration(
               color: AppColors.scaffoldColor,
               boxShadow: [
@@ -485,16 +485,16 @@ abstract class AppUtility {
     Get.showSnackbar(
       GetSnackBar(
         margin: EdgeInsets.only(
-          left: Dm.zero,
-          right: Dm.zero,
-          top: Dm.zero,
-          bottom: Dm.zero,
+          left: Dimens.zero,
+          right: Dimens.zero,
+          top: Dimens.zero,
+          bottom: Dimens.zero,
         ),
-        borderRadius: Dm.zero,
-        padding: Dm.edgeInsets16_12,
+        borderRadius: Dimens.zero,
+        padding: Dimens.edgeInsets16_12,
         snackStyle: SnackStyle.FLOATING,
         snackPosition: SnackPosition.BOTTOM,
-        borderWidth: Dm.zero,
+        borderWidth: Dimens.zero,
         messageText: Text(
           message.toCapitalized(),
           style: AppStyles.style14Normal.copyWith(
@@ -504,10 +504,10 @@ abstract class AppUtility {
         icon: Icon(
           renderIcon(type),
           color: renderIconColor(type),
-          size: Dm.twenty,
+          size: Dimens.twenty,
         ),
         mainButton: Padding(
-          padding: Dm.edgeInsets0_8,
+          padding: Dimens.edgeInsets0_8,
           child: TextButton(
             onPressed: closeSnackBar,
             child: Text(

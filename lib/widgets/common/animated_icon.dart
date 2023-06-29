@@ -1,4 +1,4 @@
-import 'package:course_app/utils/dm.dart';
+import 'package:course_app/utils/dimens.dart';
 import 'package:flutter/material.dart';
 
 const double _kDefaultAnimationAngle = 2 * 3.14;
@@ -31,7 +31,7 @@ class NxAnimatedIcon extends StatelessWidget {
       },
       child: Icon(
         icon,
-        size: size ?? Dm.twentyFour,
+        size: size ?? Dimens.twentyFour,
         color: color ?? Theme.of(context).iconTheme.color,
       ),
     );

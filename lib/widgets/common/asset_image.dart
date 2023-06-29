@@ -1,5 +1,5 @@
 import 'package:course_app/utils/app_colors.dart';
-import 'package:course_app/utils/dm.dart';
+import 'package:course_app/utils/dimens.dart';
 import 'package:flutter/cupertino.dart';
 
 class AyushAssetImage extends StatelessWidget {
@@ -28,8 +28,8 @@ class AyushAssetImage extends StatelessWidget {
       width: width ?? double.infinity,
       height: height,
       constraints: BoxConstraints(
-        maxWidth: maxWidth ?? Dm.screenWidth,
-        maxHeight: maxHeight ?? Dm.screenHeight,
+        maxWidth: maxWidth ?? Dimens.screenWidth,
+        maxHeight: maxHeight ?? Dimens.screenHeight,
       ),
       child: Image.asset(
         imgAsset,

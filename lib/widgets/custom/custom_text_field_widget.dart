@@ -1,4 +1,4 @@
-import 'package:course_app/utils/dm.dart';
+import 'package:course_app/utils/dimens.dart';
 import 'package:course_app/utils/styles/app_text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -60,17 +60,18 @@ class CustomTextField extends StatelessWidget {
         if (headingText != null)
           Container(
             margin: EdgeInsets.only(
-                left: isMargin ? Dm.w10 : 0,
-                right: isMargin ? Dm.w10 : 0,
-                bottom: Dm.h10 / 2),
+                left: isMargin ? Dimens.w10 : 0,
+                right: isMargin ? Dimens.w10 : 0,
+                bottom: Dimens.h10 / 2),
             child: Text(headingText!, style: AppStyles.style13Bold),
           ),
         Container(
           height: keyboardType != TextInputType.multiline
               ? kMinInteractiveDimension
               : null,
-          margin:
-              isMargin ? EdgeInsets.only(left: Dm.w10, right: Dm.w10) : null,
+          margin: isMargin
+              ? EdgeInsets.only(left: Dimens.w10, right: Dimens.w10)
+              : null,
           child: TextFormField(
             onTap: onTap,
             maxLines: maxLine,

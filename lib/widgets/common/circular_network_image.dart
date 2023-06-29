@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:course_app/utils/app_colors.dart';
-import 'package:course_app/utils/dm.dart';
+import 'package:course_app/utils/dimens.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -25,25 +25,25 @@ class AyushCircleNetworkImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: radius != null ? radius! * 2 : Dm.fourtyEight * 2,
-      height: radius != null ? radius! * 2 : Dm.fourtyEight * 2,
+      width: radius != null ? radius! * 2 : Dimens.fourtyEight * 2,
+      height: radius != null ? radius! * 2 : Dimens.fourtyEight * 2,
       constraints: BoxConstraints(
-        maxWidth: radius != null ? radius! * 2 : Dm.fourtyEight * 2,
-        maxHeight: radius != null ? radius! * 2 : Dm.fourtyEight * 2,
+        maxWidth: radius != null ? radius! * 2 : Dimens.fourtyEight * 2,
+        maxHeight: radius != null ? radius! * 2 : Dimens.fourtyEight * 2,
       ),
       decoration: BoxDecoration(
         color: bgColor ?? Theme.of(context).dividerColor,
         borderRadius: BorderRadius.circular(
-          radius != null ? radius! * 2 : Dm.fourtyEight * 2,
+          radius != null ? radius! * 2 : Dimens.fourtyEight * 2,
         ),
         border: Border.all(
           color: borderColor ?? Theme.of(context).dividerColor,
-          width: borderWidth ?? Dm.one,
+          width: borderWidth ?? Dimens.one,
         ),
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(
-          radius != null ? radius! * 2 : Dm.fourtyEight * 2,
+          radius != null ? radius! * 2 : Dimens.fourtyEight * 2,
         ),
         child: CachedNetworkImage(
           imageUrl: imageUrl,

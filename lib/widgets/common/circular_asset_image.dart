@@ -1,4 +1,4 @@
-import 'package:course_app/utils/dm.dart';
+import 'package:course_app/utils/dimens.dart';
 import 'package:flutter/material.dart';
 
 class AyushCircleAssetImage extends StatelessWidget {
@@ -18,23 +18,23 @@ class AyushCircleAssetImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: radius != null ? radius! * 2 : Dm.fourtyEight * 2,
-      height: radius != null ? radius! * 2 : Dm.fourtyEight * 2,
+      width: radius != null ? radius! * 2 : Dimens.fourtyEight * 2,
+      height: radius != null ? radius! * 2 : Dimens.fourtyEight * 2,
       constraints: BoxConstraints(
-        maxWidth: radius != null ? radius! * 2 : Dm.fourtyEight * 2,
-        maxHeight: radius != null ? radius! * 2 : Dm.fourtyEight * 2,
+        maxWidth: radius != null ? radius! * 2 : Dimens.fourtyEight * 2,
+        maxHeight: radius != null ? radius! * 2 : Dimens.fourtyEight * 2,
       ),
       decoration: BoxDecoration(
         color: bgColor ?? Theme.of(context).dividerColor,
         borderRadius: BorderRadius.circular(
-          radius != null ? radius! * 2 : Dm.fourtyEight * 2,
+          radius != null ? radius! * 2 : Dimens.fourtyEight * 2,
         ),
         border: Border.all(
           color: Theme.of(context).dividerColor,
         ),
       ),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(radius ?? Dm.fourtyEight),
+        borderRadius: BorderRadius.circular(radius ?? Dimens.fourtyEight),
         child: Image.asset(
           imgAsset,
           fit: fit ?? BoxFit.cover,

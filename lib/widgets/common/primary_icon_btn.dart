@@ -1,4 +1,5 @@
-import 'package:course_app/utils/dm.dart';
+import 'package:course_app/utils/dimens.dart';
+import 'package:course_app/widgets/common/ripple_effect.dart';
 import 'package:flutter/material.dart';
 
 class AyushIconButton extends StatelessWidget {
@@ -29,17 +30,17 @@ class AyushIconButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return RippleEffect(
       onTap: onTap,
       child: Container(
         width: width,
         height: height,
-        padding: padding ?? Dm.edgeInsets0,
+        padding: padding ?? Dimens.edgeInsets0,
         decoration: BoxDecoration(
           color: bgColor ?? Colors.transparent,
           borderRadius: BorderRadius.all(
             Radius.circular(
-              borderRadius ?? Dm.zero,
+              borderRadius ?? Dimens.zero,
             ),
           ),
         ),
@@ -47,13 +48,13 @@ class AyushIconButton extends StatelessWidget {
             ? Center(
                 child: Icon(
                   icon,
-                  size: iconSize ?? Dm.twentyFour,
+                  size: iconSize ?? Dimens.twentyFour,
                   color: iconColor ?? Theme.of(context).iconTheme.color,
                 ),
               )
             : Icon(
                 icon,
-                size: iconSize ?? Dm.twentyFour,
+                size: iconSize ?? Dimens.twentyFour,
                 color: iconColor ?? Theme.of(context).iconTheme.color,
               ),
       ),

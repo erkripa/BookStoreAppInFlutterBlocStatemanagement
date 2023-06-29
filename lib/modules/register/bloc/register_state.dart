@@ -1,13 +1,14 @@
 import 'package:course_app/enums/enums.dart';
+import 'package:equatable/equatable.dart';
 
-class RegisterState {
+class RegisterState extends Equatable {
   final String? userName;
   final String? email;
   final String? password;
   final String? confirmPassword;
   final Status? status;
 
-  RegisterState({
+  const RegisterState({
     this.userName,
     this.email,
     this.password,
@@ -34,4 +35,13 @@ class RegisterState {
   String toString() {
     return "userName:$userName email:$email pass:$password confass :$confirmPassword";
   }
+
+  @override
+  List<Object?> get props => [
+        userName,
+        email,
+        password,
+        confirmPassword,
+        status,
+      ];
 }

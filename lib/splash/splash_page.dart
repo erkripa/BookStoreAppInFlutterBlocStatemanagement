@@ -18,7 +18,7 @@ class SplashPage extends StatelessWidget {
       body: BlocListener<SplashBloc, SplashState>(
         listener: (context, state) {
           if (state.status == Status.done) {
-            RouteManagement.goToRegisterPage(context);
+            RouteManagement.goToWelcomePage(context);
           }
         },
         child: BlocBuilder<SplashBloc, SplashState>(

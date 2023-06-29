@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 const normalHeight = 805.3;
 
-class Dm {
+class Dimens {
   static double screenHeight = ScreenUtil().screenHeight;
   static double screenWidth = ScreenUtil().screenWidth;
 
@@ -41,7 +41,7 @@ class Dm {
   static double expandableHeight = screenHeight / 5.3;
 
   //border radius
-  static BorderRadius defaultBoderRadius = BorderRadius.circular(Dm.r10);
+  static BorderRadius defaultBoderRadius = BorderRadius.circular(Dimens.four);
 
   static SizedBox boxHeight10 = SizedBox(height: ten);
   static SizedBox boxHeight12 = SizedBox(height: twelve);
@@ -72,10 +72,11 @@ class Dm {
   static SizedBox boxWidth8 = SizedBox(width: eight);
   static SizedBox boxWidth80 = SizedBox(width: eighty);
 
-  static Divider divider = Divider(height: Dm.zero, thickness: Dm.pointEight);
+  static Divider divider =
+      Divider(height: Dimens.zero, thickness: Dimens.pointEight);
 
   static Divider dividerWithHeight =
-      Divider(thickness: Dm.pointEight, height: Dm.one);
+      Divider(thickness: Dimens.pointEight, height: Dimens.one);
 
   static EdgeInsets edgeInsets0 = EdgeInsets.zero;
   static EdgeInsets edgeInsets0_12 = EdgeInsets.symmetric(
@@ -332,8 +333,10 @@ class Dm {
 
   static SizedBox widthedBox(double width) => SizedBox(width: width);
 
-  static BorderRadius circularBorderRadius = BorderRadius.circular(Dm.four);
+  static BorderRadius circularBorderRadius = BorderRadius.circular(Dimens.four);
 
   static EdgeInsets defaultPadding =
       EdgeInsets.symmetric(horizontal: h10, vertical: h10);
+
+  static double defaultPaddingValue = ten;
 }

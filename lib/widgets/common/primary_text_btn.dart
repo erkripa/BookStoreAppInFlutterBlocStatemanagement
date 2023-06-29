@@ -1,5 +1,5 @@
 import 'package:course_app/utils/app_colors.dart';
-import 'package:course_app/utils/dm.dart';
+import 'package:course_app/utils/dimens.dart';
 import 'package:course_app/utils/styles/app_text_style.dart';
 import 'package:flutter/material.dart';
 
@@ -26,8 +26,8 @@ class ASTextButton extends StatelessWidget {
     return GestureDetector(
       onTap: enabled == true ? onTap : () {},
       child: Container(
-        padding: padding ?? Dm.edgeInsets0,
-        margin: margin ?? Dm.edgeInsets0,
+        padding: padding ?? Dimens.edgeInsets0,
+        margin: margin ?? Dimens.edgeInsets0,
         child: Text(
           label,
           style: labelStyle ??

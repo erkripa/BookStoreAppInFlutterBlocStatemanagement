@@ -1,5 +1,10 @@
+import 'package:course_app/modules/login/bloc/login_bloc.dart';
+import 'package:course_app/modules/login/pages/login_page.dart';
 import 'package:course_app/modules/register/bloc/register_bloc.dart';
 import 'package:course_app/modules/register/pages/register_page.dart';
+import 'package:course_app/modules/welcome/bloc/welcome_bloc.dart';
+import 'package:course_app/modules/welcome/pages/welcome_page.dart';
+import 'package:course_app/no_page/not_found.dart';
 import 'package:course_app/splash/bloc/splash_bloc.dart';
 import 'package:course_app/themes/cubit/theme_cubit.dart';
 import 'package:course_app/utils/utility.dart';
@@ -18,9 +23,19 @@ abstract class AppPages {
       bloc: BlocProvider(create: (context) => SplashBloc()),
     ),
     BlocPage(
+      routName: AppRoutes.welcome,
+      page: WelcomePage.new,
+      bloc: BlocProvider(create: (context) => WelcomeBloc()),
+    ),
+    BlocPage(
       routName: AppRoutes.signup,
       page: RegisterPage.new,
       bloc: BlocProvider(create: (context) => RegisterBloc()),
+    ),
+    BlocPage(
+      routName: AppRoutes.login,
+      page: LoginPage.new,
+      bloc: BlocProvider(create: (context) => LoginBloc()),
     ),
   ];
 
@@ -45,8 +60,8 @@ abstract class AppPages {
       AppUtility.log("Page Created => '${settings.name}'");
       return MaterialPageRoute(builder: (_) => result.first.page.call());
     }
-    AppUtility.log("Initial Splash Page Created => '${settings.name}'");
-    return MaterialPageRoute(builder: (_) => const SplashPage());
+    AppUtility.log("Page Not Found Created => '${settings.name}'");
+    return MaterialPageRoute(builder: (_) => const PageNotFound());
   }
 }
 

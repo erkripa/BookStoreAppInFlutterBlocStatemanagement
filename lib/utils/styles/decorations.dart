@@ -1,5 +1,5 @@
 import 'package:course_app/utils/app_colors.dart';
-import 'package:course_app/utils/dm.dart';
+import 'package:course_app/utils/dimens.dart';
 import 'package:course_app/utils/styles/app_text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -8,7 +8,7 @@ class KDecoration {
   static BoxDecoration boxDecoration = BoxDecoration(
     color: Colors.white,
     border: Border.all(width: 1, color: AppColors.greyColor),
-    borderRadius: BorderRadius.circular(Dm.r10),
+    borderRadius: BorderRadius.circular(Dimens.r10),
   );
 
   static BoxDecoration dynamickBoxDecoration(BuildContext context) {
@@ -29,11 +29,9 @@ class KDecoration {
       errorText: errorText,
       hintText: hintText,
       labelText: labelText,
-      // label: HeadingWithStartMark(labelText!),
-
       errorMaxLines: 2,
-      contentPadding:
-          EdgeInsets.only(bottom: 0, top: 0, left: Dm.w10, right: Dm.w10),
+      contentPadding: EdgeInsets.only(
+          bottom: 0, top: 0, left: Dimens.w10, right: Dimens.w10),
       hintStyle: AppStyles.textfieldHintTextStyel,
       labelStyle: AppStyles.textfieldLabelTextStyle(context),
       border: border(context, false),

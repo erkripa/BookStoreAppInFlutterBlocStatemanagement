@@ -1,5 +1,5 @@
 import 'package:course_app/utils/app_colors.dart';
-import 'package:course_app/utils/dm.dart';
+import 'package:course_app/utils/dimens.dart';
 import 'package:flutter/material.dart';
 
 class AyushCircularProgressIndicator extends StatelessWidget {
@@ -20,10 +20,10 @@ class AyushCircularProgressIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: SizedBox(
-        width: size ?? Dm.sixTeen,
-        height: size ?? Dm.sixTeen,
+        width: size ?? Dimens.sixTeen,
+        height: size ?? Dimens.sixTeen,
         child: CircularProgressIndicator(
-          strokeWidth: strokeWidth ?? Dm.three,
+          strokeWidth: strokeWidth ?? Dimens.three,
           color: color ?? AppColors.primaryColor,
           value: value,
         ),

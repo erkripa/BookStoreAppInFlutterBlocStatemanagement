@@ -1,5 +1,5 @@
 import 'package:course_app/utils/app_colors.dart';
-import 'package:course_app/utils/dm.dart';
+import 'package:course_app/utils/dimens.dart';
 import 'package:flutter/material.dart';
 
 class AyushCircleBorder extends StatelessWidget {
@@ -21,14 +21,14 @@ class AyushCircleBorder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: radius ?? Dm.thirtyTwo,
-      height: radius ?? Dm.thirtyTwo,
+      width: radius ?? Dimens.thirtyTwo,
+      height: radius ?? Dimens.thirtyTwo,
       decoration: BoxDecoration(
         color: color ?? AppColors.transparent,
         shape: BoxShape.circle,
         border: Border.all(
           color: borderColor ?? Theme.of(context).dividerColor,
-          width: borderWidth ?? Dm.one,
+          width: borderWidth ?? Dimens.one,
         ),
       ),
       child: Center(child: child),

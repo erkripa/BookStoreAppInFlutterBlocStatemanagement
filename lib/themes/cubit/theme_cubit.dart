@@ -1,6 +1,6 @@
 import 'package:course_app/services/hive_service.dart';
 import 'package:course_app/utils/app_colors.dart';
-import 'package:course_app/utils/dm.dart';
+import 'package:course_app/utils/dimens.dart';
 import 'package:course_app/utils/styles/app_text_style.dart';
 import 'package:course_app/utils/utility.dart';
 import 'package:flutter/material.dart';
@@ -117,7 +117,7 @@ class ThemeCubit extends Cubit<ThemeState> {
           elevation: MaterialStateProperty.all(0.0),
           shape: MaterialStateProperty.all(
             RoundedRectangleBorder(
-              borderRadius: Dm.defaultBoderRadius,
+              borderRadius: Dimens.defaultBoderRadius,
             ),
           ),
           side: MaterialStateProperty.all(
@@ -130,11 +130,11 @@ class ThemeCubit extends Cubit<ThemeState> {
         filled: true,
         fillColor: AppColors.lightDialogColor,
         constraints: BoxConstraints(
-          minHeight: Dm.fiftySix,
-          // maxHeight: Dm.fiftySix,
-          maxWidth: Dm.screenWidth,
+          minHeight: Dimens.fiftySix,
+          // maxHeight: Dimens.fiftySix,
+          maxWidth: Dimens.screenWidth,
         ),
-        contentPadding: Dm.edgeInsets0_12,
+        contentPadding: Dimens.edgeInsets0_12,
         labelStyle: AppStyles.style14Normal.copyWith(
           color: AppColors.primaryLightColor,
         ),
@@ -151,44 +151,44 @@ class ThemeCubit extends Cubit<ThemeState> {
         border: OutlineInputBorder(
           borderSide: BorderSide(
             color: AppColors.lightDividerColor,
-            width: Dm.pointFour,
+            width: Dimens.pointFour,
           ),
-          borderRadius: Dm.circularBorderRadius,
+          borderRadius: Dimens.circularBorderRadius,
         ),
         disabledBorder: OutlineInputBorder(
           borderSide: BorderSide(
             color: AppColors.lightDividerColor.withAlpha(20),
-            width: Dm.pointFour,
+            width: Dimens.pointFour,
           ),
-          borderRadius: Dm.circularBorderRadius,
+          borderRadius: Dimens.circularBorderRadius,
         ),
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(
             color: AppColors.lightDividerColor,
-            width: Dm.pointFour,
+            width: Dimens.pointFour,
           ),
-          borderRadius: Dm.circularBorderRadius,
+          borderRadius: Dimens.circularBorderRadius,
         ),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
             color: AppColors.primaryColor,
-            width: Dm.pointEight,
+            width: Dimens.pointEight,
           ),
-          borderRadius: Dm.circularBorderRadius,
+          borderRadius: Dimens.circularBorderRadius,
         ),
         errorBorder: OutlineInputBorder(
           borderSide: BorderSide(
             color: AppColors.errorColor,
-            width: Dm.pointEight,
+            width: Dimens.pointEight,
           ),
-          borderRadius: Dm.circularBorderRadius,
+          borderRadius: Dimens.circularBorderRadius,
         ),
         focusedErrorBorder: OutlineInputBorder(
           borderSide: BorderSide(
             color: AppColors.errorColor,
-            width: Dm.pointEight,
+            width: Dimens.pointEight,
           ),
-          borderRadius: Dm.circularBorderRadius,
+          borderRadius: Dimens.circularBorderRadius,
         ),
       ),
       fontFamily: kDefaultFontFamily,
@@ -221,11 +221,11 @@ class ThemeCubit extends Cubit<ThemeState> {
         labelColor: AppColors.deppBlackColor,
         labelStyle: AppStyles.textfieldHintTextStyel.copyWith(
           fontWeight: FontWeight.w600,
-          fontSize: Dm.f14,
+          fontSize: Dimens.f14,
         ),
         unselectedLabelStyle: AppStyles.textfieldHintTextStyel.copyWith(
           fontWeight: FontWeight.w600,
-          fontSize: Dm.f14,
+          fontSize: Dimens.f14,
         ),
       ),
       progressIndicatorTheme: ProgressIndicatorThemeData(
@@ -279,9 +279,9 @@ class ThemeCubit extends Cubit<ThemeState> {
         filled: true,
         fillColor: AppColors.darkDialogColor,
         constraints: BoxConstraints(
-          minHeight: Dm.fiftySix,
-          // maxHeight: Dm.fiftySix,
-          maxWidth: Dm.screenWidth,
+          minHeight: Dimens.fiftySix,
+          // maxHeight: Dimens.fiftySix,
+          maxWidth: Dimens.screenWidth,
         ),
         labelStyle: AppStyles.style14Normal.copyWith(
           color: AppColors.darkBodyTextColor,
@@ -298,44 +298,44 @@ class ThemeCubit extends Cubit<ThemeState> {
         border: OutlineInputBorder(
           borderSide: BorderSide(
             color: AppColors.darkDividerColor,
-            width: Dm.pointFour,
+            width: Dimens.pointFour,
           ),
-          borderRadius: Dm.circularBorderRadius,
+          borderRadius: Dimens.circularBorderRadius,
         ),
         disabledBorder: OutlineInputBorder(
           borderSide: BorderSide(
             color: AppColors.errorColor,
-            width: Dm.pointFour,
+            width: Dimens.pointFour,
           ),
-          borderRadius: Dm.circularBorderRadius,
+          borderRadius: Dimens.circularBorderRadius,
         ),
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(
             color: AppColors.darkDividerColor,
-            width: Dm.pointFour,
+            width: Dimens.pointFour,
           ),
-          borderRadius: Dm.circularBorderRadius,
+          borderRadius: Dimens.circularBorderRadius,
         ),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
             color: AppColors.primaryColor,
-            width: Dm.pointEight,
+            width: Dimens.pointEight,
           ),
-          borderRadius: Dm.circularBorderRadius,
+          borderRadius: Dimens.circularBorderRadius,
         ),
         errorBorder: OutlineInputBorder(
           borderSide: BorderSide(
             color: AppColors.errorColor,
-            width: Dm.pointEight,
+            width: Dimens.pointEight,
           ),
-          borderRadius: Dm.circularBorderRadius,
+          borderRadius: Dimens.circularBorderRadius,
         ),
         focusedErrorBorder: OutlineInputBorder(
           borderSide: BorderSide(
             color: AppColors.errorColor,
-            width: Dm.pointEight,
+            width: Dimens.pointEight,
           ),
-          borderRadius: Dm.circularBorderRadius,
+          borderRadius: Dimens.circularBorderRadius,
         ),
       ),
       fontFamily: kDefaultFontFamily,

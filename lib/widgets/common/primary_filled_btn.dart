@@ -1,6 +1,7 @@
 import 'package:course_app/utils/app_colors.dart';
-import 'package:course_app/utils/dm.dart';
+import 'package:course_app/utils/dimens.dart';
 import 'package:course_app/utils/styles/app_text_style.dart';
+import 'package:course_app/widgets/common/ripple_effect.dart';
 import 'package:flutter/material.dart';
 
 class AyushFilledButton extends StatelessWidget {
@@ -37,37 +38,39 @@ class AyushFilledButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        width: width,
-        height: height,
-        padding: padding,
-        margin: margin,
-        constraints: BoxConstraints(maxWidth: Dm.screenWidth),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(borderRadius ?? Dm.four),
-          color: bgColor ?? AppColors.primaryColor,
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            if (prefix != null) prefix!,
-            if (prefix != null) Dm.boxWidth4,
-            Text(
-              label,
-              style: labelStyle ??
-                  AppStyles.style16Bold.copyWith(
-                    color: labelColor ??
-                        Theme.of(context).textTheme.bodyLarge!.color,
-                    fontSize: fontSize ?? Dm.sixTeen,
-                  ),
-            ),
-            if (suffix != null) Dm.boxWidth4,
-            if (suffix != null) suffix!,
-          ],
+    return Container(
+      margin: margin,
+      child: RippleEffect(
+        onTap: onTap,
+        child: Container(
+          width: width,
+          height: height,
+          padding: padding,
+          constraints: BoxConstraints(maxWidth: Dimens.screenWidth),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(borderRadius ?? Dimens.four),
+            color: bgColor ?? AppColors.primaryColor,
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              if (prefix != null) prefix!,
+              if (prefix != null) Dimens.boxWidth4,
+              Text(
+                label,
+                style: labelStyle ??
+                    AppStyles.style16Bold.copyWith(
+                      color: labelColor ??
+                          Theme.of(context).textTheme.titleLarge!.color,
+                      fontSize: fontSize ?? Dimens.sixTeen,
+                    ),
+              ),
+              if (suffix != null) Dimens.boxWidth4,
+              if (suffix != null) suffix!,
+            ],
+          ),
         ),
       ),
     );

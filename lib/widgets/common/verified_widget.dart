@@ -1,5 +1,5 @@
 import 'package:course_app/utils/app_colors.dart';
-import 'package:course_app/utils/dm.dart';
+import 'package:course_app/utils/dimens.dart';
 import 'package:flutter/material.dart';
 
 class VerifiedWidget extends StatelessWidget {
@@ -32,7 +32,7 @@ class VerifiedWidget extends StatelessWidget {
     return Icon(
       Icons.verified,
       color: getIconColor(verifiedCategory),
-      size: size ?? Dm.twenty,
+      size: size ?? Dimens.twenty,
     );
   }
 }

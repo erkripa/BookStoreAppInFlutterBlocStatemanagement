@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:course_app/utils/app_colors.dart';
-import 'package:course_app/utils/dm.dart';
+import 'package:course_app/utils/dimens.dart';
 import 'package:course_app/widgets/common/custom_colored_box.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -27,11 +27,11 @@ class AyushNetworkImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: width ?? Dm.screenWidth,
+      width: width ?? Dimens.screenWidth,
       height: height,
       constraints: BoxConstraints(
-        maxWidth: maxWidth ?? Dm.screenWidth,
-        maxHeight: maxHeight ?? Dm.screenHeight,
+        maxWidth: maxWidth ?? Dimens.screenWidth,
+        maxHeight: maxHeight ?? Dimens.screenHeight,
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(radius ?? 0.0),

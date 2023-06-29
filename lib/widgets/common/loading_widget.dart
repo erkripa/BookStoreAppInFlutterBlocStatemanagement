@@ -1,4 +1,4 @@
-import 'package:course_app/utils/dm.dart';
+import 'package:course_app/utils/dimens.dart';
 import 'package:course_app/utils/styles/app_text_style.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +20,7 @@ class LoadingWidget extends StatelessWidget {
     if (isStyle1) {
       return Center(
         child: Container(
-          padding: EdgeInsets.all(Dm.h10),
+          padding: EdgeInsets.all(Dimens.h10),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -29,7 +29,7 @@ class LoadingWidget extends StatelessWidget {
                     Theme.of(context).progressIndicatorTheme.color!),
                 strokeWidth: 3,
               ),
-              Dm.boxHeight10,
+              Dimens.boxHeight10,
               Text(
                 'Please wait..',
                 style: AppStyles.style12Bold.copyWith(

@@ -5,7 +5,7 @@ import 'package:course_app/modules/register/repo/register_repo.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
-  RegisterBloc() : super(RegisterState()) {
+  RegisterBloc() : super(const RegisterState()) {
     on<UserNameEvent>(_userNameEvent);
     on<EmailEvent>(_emailEvent);
     on<PasswordEvent>(_passwordEvent);
@@ -40,17 +40,13 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
   ) async {
     try {
       emit(state.copyWith(status: Status.loading));
-      registerRepo.register(state);
+
+      // registerRepo.register(state);
       await Future.delayed(const Duration(seconds: 2));
-      dynamic err;
       emit(state.copyWith(status: Status.done));
-      // addError("error");
-      // emit(state.copyWith(status: Status.error));
-      err = 0;
-      err.get();
     } catch (e) {
+      emit(state.copyWith(status: Status.done));
       print("catch : $e");
-      emit(state.copyWith(status: Status.error));
     }
   }
 }

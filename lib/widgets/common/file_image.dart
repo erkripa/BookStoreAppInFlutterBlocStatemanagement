@@ -1,11 +1,11 @@
 import 'dart:io';
 
 import 'package:course_app/utils/app_colors.dart';
-import 'package:course_app/utils/dm.dart';
+import 'package:course_app/utils/dimens.dart';
 import 'package:flutter/cupertino.dart';
 
-class NxFileImage extends StatelessWidget {
-  const NxFileImage({
+class AyushFileImage extends StatelessWidget {
+  const AyushFileImage({
     Key? key,
     required this.file,
     this.width,
@@ -30,8 +30,8 @@ class NxFileImage extends StatelessWidget {
       width: width ?? double.infinity,
       height: height,
       constraints: BoxConstraints(
-        maxWidth: maxWidth ?? Dm.screenWidth,
-        maxHeight: maxHeight ?? Dm.screenHeight,
+        maxWidth: maxWidth ?? Dimens.screenWidth,
+        maxHeight: maxHeight ?? Dimens.screenHeight,
       ),
       child: Image.file(
         file,
