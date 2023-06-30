@@ -10,12 +10,15 @@ abstract class RouteManagement {
       Navigator.pushNamedAndRemoveUntil(
           context, AppRoutes.welcome, (_) => false);
 
-  static goToHomePage(BuildContext context) =>
-      Navigator.pushNamedAndRemoveUntil(context, AppRoutes.home, (_) => false);
+  static goToApplicationPage(BuildContext context) =>
+      Navigator.pushNamedAndRemoveUntil(
+          context, AppRoutes.initial, (_) => false);
 
   static void goToRegisterPage(BuildContext context) =>
       Navigator.pushNamed(context, AppRoutes.signup);
 
   static void goToLoginPage(BuildContext context) =>
       Navigator.pushNamed(context, AppRoutes.login);
+
+  static void goToBack(BuildContext context) => Navigator.pop(context);
 }

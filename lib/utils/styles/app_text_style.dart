@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 
 abstract class AppStyles {
   static const Color kShadowColor = Color.fromARGB(255, 0, 0, 0);
-  static String get defaultFontFamily => 'HKGrotesk';
+  static String get defaultFontFamily => 'Calibri';
+  static String get defaultFontFamily1 => 'Avenir';
+  static String get defaultFontFamily2 => 'Montserrat';
 
   static double get defaultHeight => 1.25;
   static TextStyle style10Bold = TextStyle(

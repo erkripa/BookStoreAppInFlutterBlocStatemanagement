@@ -1,4 +1,3 @@
-import 'package:course_app/modules/welcome/pages/welcome_page.dart';
 import 'package:course_app/routes/app_pages.dart';
 import 'package:course_app/themes/cubit/theme_cubit.dart';
 import 'package:course_app/translations/app_translations.dart';
@@ -41,13 +40,13 @@ class MyApp extends StatelessWidget {
               return GetMaterialApp(
                 title: 'Ayushona App',
                 debugShowCheckedModeBanner: false,
-                onGenerateRoute: AppPages.onGenerateRoute,
                 themeMode: _handleAppTheme(state.themeMode),
                 theme: context.read<ThemeCubit>().getLightThemeData(),
                 darkTheme: context.read<ThemeCubit>().getDarkThemeData(),
                 translations: AppTranslation(),
+                onGenerateRoute: AppPages.onGenerateRoute,
+                initialRoute: AppRoutes.initial,
                 // home: WelcomePage(),
-                initialRoute: AppRoutes.splash,
               );
             },
           );

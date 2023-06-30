@@ -1,7 +1,9 @@
+import 'package:course_app/constants/app_constant.dart';
 import 'package:course_app/modules/welcome/bloc/welcome_bloc.dart';
 import 'package:course_app/modules/welcome/bloc/welcome_event.dart';
 import 'package:course_app/modules/welcome/bloc/welcome_state.dart';
 import 'package:course_app/routes/route_management.dart';
+import 'package:course_app/services/hive_service.dart';
 import 'package:course_app/utils/dimens.dart';
 import 'package:course_app/widgets/common/primary_filled_btn.dart';
 import 'package:dots_indicator/dots_indicator.dart';
@@ -55,7 +57,7 @@ class WelcomePage extends StatelessWidget {
                     height: Dimens.h40,
                     width: Dimens.hundred,
                     borderRadius: Dimens.r30,
-                    onTap: () => RouteManagement.goToHomePage(context),
+                    onTap: () => onNextTap(context),
                   ),
                 ),
             ],
@@ -63,5 +65,11 @@ class WelcomePage extends StatelessWidget {
         },
       ),
     );
+  }
+
+  void onNextTap(BuildContext context) async {
+    await HiveService.put<bool>(AppConstant.firstTimeOpenAppBoxName,
+            AppConstant.firstTimeOpenAppKey, true)
+        .then((value) => RouteManagement.goToLoginPage(context));
   }
 }

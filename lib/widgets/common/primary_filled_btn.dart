@@ -42,6 +42,7 @@ class AyushFilledButton extends StatelessWidget {
       margin: margin,
       child: RippleEffect(
         onTap: onTap,
+        radius: borderRadius,
         child: Container(
           width: width,
           height: height,

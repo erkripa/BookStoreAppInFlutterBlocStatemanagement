@@ -118,7 +118,6 @@ class _PasswordInput extends StatelessWidget {
           headingText: "Password",
           suffixIcon: AyushIconButton(
             icon: Icons.remove_red_eye_outlined,
-            centerIcon: false,
             onTap: () {},
           ),
         );
@@ -140,7 +139,6 @@ class _ConfirmPasswordInput extends StatelessWidget {
           headingText: "Confrim Password",
           suffixIcon: AyushIconButton(
             icon: Icons.remove_red_eye_outlined,
-            centerIcon: false,
             onTap: () {},
           ),
         );

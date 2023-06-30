@@ -2,6 +2,7 @@ import 'package:course_app/enums/enums.dart';
 import 'package:course_app/modules/login/bloc/login_bloc.dart';
 import 'package:course_app/utils/dimens.dart';
 import 'package:course_app/utils/styles/app_text_style.dart';
+import 'package:course_app/widgets/common/circular_progress_indicator.dart';
 import 'package:course_app/widgets/common/primary_filled_btn.dart';
 import 'package:course_app/widgets/common/primary_icon_btn.dart';
 import 'package:course_app/widgets/custom/custom_text_field_widget.dart';
@@ -85,7 +86,6 @@ class _PasswordInput extends StatelessWidget {
           headingText: "Password",
           suffixIcon: AyushIconButton(
             icon: Icons.remove_red_eye_outlined,
-            centerIcon: false,
             onTap: () {},
           ),
         );
@@ -101,7 +101,7 @@ class _LoginSubmitButton extends StatelessWidget {
       buildWhen: (previous, current) => previous.status != current.status,
       builder: (context, state) {
         return state.status == Status.loading
-            ? const CircularProgressIndicator()
+            ? const AyushCircularProgressIndicator()
             : AyushFilledButton(
                 onTap: () => context.read<LoginBloc>().add(LoginSubmitEvent()),
                 label: 'Login',

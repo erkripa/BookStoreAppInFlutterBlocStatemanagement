@@ -238,6 +238,7 @@ class Dimens {
   static EdgeInsets edgeInsetsOnlyLeft24 = EdgeInsets.only(left: twentyFour);
   static EdgeInsets edgeInsetsOnlyLeft32 = EdgeInsets.only(left: thirtyTwo);
   static EdgeInsets edgeInsetsOnlyLeft8 = EdgeInsets.only(left: eight);
+  static EdgeInsets edgeInsetsOnlyLeft5 = EdgeInsets.only(left: five);
   static EdgeInsets edgeInsetsOnlyTop12 = EdgeInsets.only(top: twelve);
   static EdgeInsets edgeInsetsOnlyTop16 = EdgeInsets.only(top: sixTeen);
   static EdgeInsets edgeInsetsOnlyTop2 = EdgeInsets.only(top: two);
@@ -273,6 +274,7 @@ class Dimens {
   static double four = 4.r;
   static double fourteen = 14.r;
   static double fourty = 40.r;
+  static double fourtyTwo = 42.r;
   static double fourtyEight = 48.r;
   static double hundred = 100.r;
   static double nineteen = 19.r;
