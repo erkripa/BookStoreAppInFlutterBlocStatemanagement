@@ -9,8 +9,9 @@ class AyushIconButton extends StatelessWidget {
   final Color? bgColor;
   final EdgeInsets? padding;
   final double? borderRadius;
-
+  final double? size;
   final Widget? child;
+  final bool isCircle;
 
   const AyushIconButton({
     Key? key,
@@ -22,6 +23,8 @@ class AyushIconButton extends StatelessWidget {
     this.iconSize,
     this.borderRadius,
     this.child,
+    this.size,
+    this.isCircle = false,
   }) : super(key: key);
 
   @override
@@ -29,12 +32,25 @@ class AyushIconButton extends StatelessWidget {
     return IconButton(
       onPressed: onTap,
       iconSize: iconSize ?? Dimens.twentyFour,
-      style: IconButton.styleFrom(padding: padding),
+      style: IconButton.styleFrom(
+        padding: padding ?? EdgeInsets.zero,
+        backgroundColor: bgColor,
+        shape: isCircle ? null : rectangleShape,
+        maximumSize: size != null ? Size.square(size!) : null,
+        minimumSize: size != null ? Size.square(size!) : null,
+      ),
       icon: child ??
           Icon(
             icon,
             color: iconColor ?? Theme.of(context).iconTheme.color,
           ),
+    );
+  }
+
+  RoundedRectangleBorder get rectangleShape {
+    return RoundedRectangleBorder(
+      borderRadius:
+          BorderRadius.circular(borderRadius ?? Dimens.defaultPaddingValue),
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:course_app/core/providers.dart';
 import 'package:course_app/routes/app_pages.dart';
 import 'package:course_app/themes/cubit/theme_cubit.dart';
 import 'package:course_app/translations/app_translations.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [...AppPages.allBlocsProvider()],
+      providers: [...AppPages.routesBlocsProvider, ...Providers.providers],
       child: ScreenUtilInit(
         designSize: const Size(360, 690),
         minTextAdapt: true,

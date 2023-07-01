@@ -6,3 +6,8 @@ abstract class HomeEvent extends Equatable {
   @override
   List<Object> get props => [];
 }
+
+class BannerChange extends HomeEvent {
+  final int index;
+  const BannerChange({required this.index});
+}

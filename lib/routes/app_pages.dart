@@ -47,7 +47,7 @@ abstract class AppPages {
     ),
   ];
 
-  static List<dynamic> allBlocsProvider() {
+  static List<dynamic> get routesBlocsProvider {
     List<dynamic> blocProviders = <dynamic>[];
     //for theme
     blocProviders.add(BlocProvider(create: (context) => ThemeCubit()));

@@ -5,6 +5,7 @@ import 'package:course_app/modules/welcome/bloc/welcome_state.dart';
 import 'package:course_app/routes/route_management.dart';
 import 'package:course_app/services/hive_service.dart';
 import 'package:course_app/utils/dimens.dart';
+import 'package:course_app/utils/styles/decorations.dart';
 import 'package:course_app/widgets/common/primary_filled_btn.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
@@ -38,14 +39,7 @@ class WelcomePage extends StatelessWidget {
                 child: DotsIndicator(
                   dotsCount: 3,
                   position: state.page,
-                  decorator: DotsDecorator(
-                    activeColor: Theme.of(context).primaryColor,
-                    color: Theme.of(context).disabledColor,
-                    size: Size.square(Dimens.eight),
-                    activeSize: Size(Dimens.twenty, Dimens.ten),
-                    activeShape: RoundedRectangleBorder(
-                        borderRadius: Dimens.circularBorderRadius),
-                  ),
+                  decorator: KDecoration.dotsDecoration(context),
                 ),
               ),
               if (state.page == 2)

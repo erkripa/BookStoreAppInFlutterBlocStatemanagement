@@ -1,6 +1,7 @@
 import 'package:course_app/utils/app_colors.dart';
 import 'package:course_app/utils/dimens.dart';
 import 'package:course_app/utils/styles/app_text_style.dart';
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -47,5 +48,27 @@ class KDecoration {
       width: isEnabled ? 1.5 : 1,
       color: AppColors.primaryLightColor,
     ));
+  }
+
+  static DotsDecorator dotsDecoration(BuildContext context) {
+    return DotsDecorator(
+      activeColor: Theme.of(context).primaryColor,
+      color: Theme.of(context).disabledColor,
+      size: Size.square(Dimens.eight),
+      activeSize: Size(Dimens.twenty, Dimens.ten),
+      activeShape:
+          RoundedRectangleBorder(borderRadius: Dimens.circularBorderRadius),
+    );
+  }
+
+  static DotsDecorator dotsDecoration1(BuildContext context) {
+    return DotsDecorator(
+      activeColor: Theme.of(context).primaryColor,
+      color: Theme.of(context).disabledColor,
+      size: Size.square(Dimens.eight),
+      activeSize: Size(Dimens.twenty, Dimens.five),
+      activeShape:
+          RoundedRectangleBorder(borderRadius: Dimens.circularBorderRadius),
+    );
   }
 }

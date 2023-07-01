@@ -1,10 +1,15 @@
 part of 'home_bloc.dart';
 
-abstract class HomeState extends Equatable {
-  const HomeState();
-  
-  @override
-  List<Object> get props => [];
-}
+class HomeState extends Equatable {
+  final int dotIndex;
+  final List<String>? banners;
+  const HomeState({this.dotIndex = 0, this.banners});
 
-class HomeInitial extends HomeState {}
+  HomeState copyWith({int? dotIndex, List<String>? banners}) => HomeState(
+        dotIndex: dotIndex ?? this.dotIndex,
+        banners: banners ?? this.banners,
+      );
+
+  @override
+  List<Object?> get props => [dotIndex];
+}

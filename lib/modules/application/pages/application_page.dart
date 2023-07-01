@@ -12,6 +12,7 @@ class ApplicationPage extends StatelessWidget {
     return BlocBuilder<ApplicationBloc, ApplicationState>(
       builder: (context, state) {
         return Scaffold(
+          // backgroundColor: Theme.of(context).cardColor,
           body: IndexedStack(
             index: state.currentPageIndex,
             children: state.pages ?? [],
