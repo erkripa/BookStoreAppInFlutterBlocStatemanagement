@@ -38,7 +38,7 @@ class ThemeCubit extends Cubit<ThemeState>
       colorSchemeSeed: AppColors.primaryColor,
       primaryColorLight: AppColors.primaryLightColor,
       iconTheme: const IconThemeData(color: AppColors.darkerGrayColor),
-      scaffoldBackgroundColor: AppColors.lightBgColor,
+      scaffoldBackgroundColor: AppColors.whiteColor,
       appBarTheme: lightAppBarTheme(),
       cardColor: AppColors.lightDialogColor,
       shadowColor: AppColors.shadowColor.withAlpha(12),

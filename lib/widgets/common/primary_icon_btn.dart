@@ -1,22 +1,26 @@
+import 'package:course_app/utils/app_colors.dart';
 import 'package:course_app/utils/dimens.dart';
 import 'package:flutter/material.dart';
 
 class AyushIconButton extends StatelessWidget {
   final IconData? icon;
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
   final Color? iconColor;
   final double? iconSize;
   final Color? bgColor;
+  final Color? disabledColor;
   final EdgeInsets? padding;
   final double? borderRadius;
   final double? size;
   final Widget? child;
   final bool isCircle;
+  final bool isEnabled;
+  final double? borderWidth;
 
   const AyushIconButton({
     Key? key,
     this.icon,
-    required this.onTap,
+    this.onTap,
     this.iconColor,
     this.bgColor,
     this.padding,
@@ -25,6 +29,9 @@ class AyushIconButton extends StatelessWidget {
     this.child,
     this.size,
     this.isCircle = false,
+    this.isEnabled = true,
+    this.disabledColor,
+    this.borderWidth,
   }) : super(key: key);
 
   @override
@@ -38,6 +45,7 @@ class AyushIconButton extends StatelessWidget {
         shape: isCircle ? null : rectangleShape,
         maximumSize: size != null ? Size.square(size!) : null,
         minimumSize: size != null ? Size.square(size!) : null,
+        disabledBackgroundColor: isEnabled == false ? disabledColor : null,
       ),
       icon: child ??
           Icon(
@@ -49,6 +57,13 @@ class AyushIconButton extends StatelessWidget {
 
   RoundedRectangleBorder get rectangleShape {
     return RoundedRectangleBorder(
+      side: borderWidth == null
+          ? BorderSide.none
+          : BorderSide(
+              width: borderWidth!,
+              color: AppColors.grayshade,
+              style: BorderStyle.solid,
+            ),
       borderRadius:
           BorderRadius.circular(borderRadius ?? Dimens.defaultPaddingValue),
     );

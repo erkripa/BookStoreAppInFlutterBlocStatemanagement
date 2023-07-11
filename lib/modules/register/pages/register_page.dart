@@ -2,6 +2,7 @@ import 'package:course_app/enums/enums.dart';
 import 'package:course_app/modules/register/bloc/register_bloc.dart';
 import 'package:course_app/modules/register/bloc/register_state.dart';
 import 'package:course_app/routes/route_management.dart';
+import 'package:course_app/utils/app_colors.dart';
 import 'package:course_app/utils/dimens.dart';
 import 'package:course_app/utils/styles/app_text_style.dart';
 import 'package:course_app/widgets/common/circular_progress_indicator.dart';
@@ -20,7 +21,8 @@ class RegisterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body: RegisterForm());
+    return const Scaffold(
+        backgroundColor: AppColors.lightBgColor, body: RegisterForm());
   }
 }
 
@@ -42,31 +44,57 @@ class RegisterForm extends StatelessWidget {
         }
       },
       child: Align(
-        alignment: const Alignment(0, -1 / 3),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text("Create Account", style: AppStyles.style16Bold),
-            Dimens.boxHeight40,
-            _UsernameInput(),
-            Dimens.boxHeight10,
-            _EmailInput(),
-            Dimens.boxHeight10,
-            _PasswordInput(),
-            Dimens.boxHeight10,
-            _ConfirmPasswordInput(),
-            Dimens.boxHeight20,
-            _RegisterButton(),
-            AyushOutlinedButton(
-              onTap: () => RouteManagement.goToLoginPage(context),
-              label: "Login Account",
-              padding: Dimens.defaultPadding,
-              width: Dimens.screenWidth,
-              margin: Dimens.defaultPadding,
-            ),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Center(
+                  child: Text("Create Account", style: AppStyles.style16Bold)),
+              Dimens.boxHeight40,
+              _UsernameInput(),
+              Dimens.boxHeight10,
+              _EmailInput(),
+              Dimens.boxHeight10,
+              _PasswordInput(),
+              Dimens.boxHeight10,
+              _ConfirmPasswordInput(),
+              Dimens.boxHeight20,
+              _RegisterButton(),
+              const _AlreadyHaveAccount(),
+            ],
+          ),
         ),
       ),
+    );
+  }
+}
+
+class _AlreadyHaveAccount extends StatelessWidget {
+  const _AlreadyHaveAccount({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Center(
+          child: Text(
+            "Already have an account?",
+            style: AppStyles.style14Bold,
+          ),
+        ),
+        AyushOutlinedButton(
+          onTap: () => RouteManagement.goToLoginPage(context),
+          label: "Login Account",
+          padding: Dimens.defaultPadding,
+          width: Dimens.screenWidth,
+          margin: Dimens.defaultPadding,
+        ),
+      ],
     );
   }
 }

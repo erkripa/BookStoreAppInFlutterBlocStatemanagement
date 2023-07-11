@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
                 darkTheme: context.read<ThemeCubit>().getDarkThemeData(),
                 translations: AppTranslation(),
                 onGenerateRoute: AppPages.onGenerateRoute,
-                initialRoute: AppRoutes.initial,
+                initialRoute: AppRoutes.splash,
                 // home: WelcomePage(),
               );
             },

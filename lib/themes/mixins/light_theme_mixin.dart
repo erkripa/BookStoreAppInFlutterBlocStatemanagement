@@ -17,7 +17,9 @@ mixin LightThemeMixin {
 
   AppBarTheme lightAppBarTheme() {
     return AppBarTheme(
-      backgroundColor: AppColors.whiteColor,
+      backgroundColor: AppColors.transparent,
+      elevation: -0.9,
+      shadowColor: Colors.transparent,
       systemOverlayStyle: lightSystemUiOverlayStyle(),
     );
   }
@@ -176,6 +178,7 @@ mixin LightThemeMixin {
         // backgroundColor: MaterialStateProperty.all(AppColors.primaryColor),
         foregroundColor: MaterialStateProperty.all(AppColors.whiteColor),
         elevation: MaterialStateProperty.all(0.0),
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
     );
   }

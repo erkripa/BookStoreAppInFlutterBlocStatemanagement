@@ -58,6 +58,7 @@ class Dimens {
   static SizedBox boxHeight60 = SizedBox(height: sixty);
   static SizedBox boxHeight64 = SizedBox(height: sixtyFour);
   static SizedBox boxHeight8 = SizedBox(height: eight);
+  static SizedBox boxHeight6 = SizedBox(height: six);
   static SizedBox boxHeight80 = SizedBox(height: eighty);
   static SizedBox boxWidth10 = SizedBox(width: ten);
   static SizedBox boxWidth12 = SizedBox(width: twelve);
@@ -335,10 +336,10 @@ class Dimens {
 
   static SizedBox widthedBox(double width) => SizedBox(width: width);
 
-  static BorderRadius circularBorderRadius = BorderRadius.circular(Dimens.four);
+  static BorderRadius circularBorderRadius = BorderRadius.circular(eight);
 
   static EdgeInsets defaultPadding =
-      EdgeInsets.symmetric(horizontal: h10, vertical: h10);
+      EdgeInsets.symmetric(horizontal: eight, vertical: eight);
 
-  static double defaultPaddingValue = ten;
+  static double defaultPaddingValue = eight;
 }

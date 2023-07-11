@@ -36,11 +36,12 @@ class SearchSection extends StatelessWidget {
               ),
               Dimens.boxWidth10,
               AyushIconButton(
-                bgColor: AppColors.lightWhite,
+                bgColor: AppColors.whiteColor,
                 onTap: () {},
                 icon: Icons.sort_outlined,
                 size: Dimens.fourtyTwo,
-              )
+                borderWidth: 0.5,
+              ),
             ],
           ),
         ),

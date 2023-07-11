@@ -1,47 +1,64 @@
-import 'package:course_app/utils/app_colors.dart';
 import 'package:course_app/utils/dimens.dart';
 import 'package:course_app/utils/styles/app_text_style.dart';
 import 'package:flutter/material.dart';
 
-class ASTextButton extends StatelessWidget {
-  final String label;
-  final VoidCallback onTap;
+class AyushTextButton extends StatelessWidget {
+  final String? label;
+  final VoidCallback? onTap;
   final EdgeInsets? padding;
   final EdgeInsets? margin;
   final TextStyle? labelStyle;
   final bool? enabled;
+  final Color? textColor;
+  final double? borderRadius;
+  final double? size;
+  final Widget? child;
+  final bool isCircle;
 
-  const ASTextButton({
+  const AyushTextButton({
     Key? key,
-    required this.label,
-    required this.onTap,
+    this.label,
+    this.onTap,
     this.padding,
     this.margin,
     this.labelStyle,
     this.enabled = true,
+    this.textColor,
+    this.borderRadius,
+    this.size,
+    this.child,
+    this.isCircle = false,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: enabled == true ? onTap : () {},
-      child: Container(
-        padding: padding ?? Dimens.edgeInsets0,
-        margin: margin ?? Dimens.edgeInsets0,
-        child: Text(
-          label,
-          style: labelStyle ??
-              AppStyles.style16Bold.copyWith(
-                color: enabled == true
-                    ? AppColors.linkColor
-                    : Theme.of(context)
-                        .textTheme
-                        .bodyLarge!
-                        .color!
-                        .withAlpha(50),
-              ),
+    return Container(
+      margin: margin,
+      child: TextButton(
+        onPressed: enabled == true ? onTap : null,
+        style: TextButton.styleFrom(
+          padding: padding ?? EdgeInsets.zero,
+          shape: isCircle ? null : rectangleShape,
+          maximumSize: size != null ? Size.square(size!) : null,
+          minimumSize: size != null ? Size.square(size!) : null,
         ),
+        child: label != null
+            ? Text(
+                label!,
+                style: AppStyles.style14Bold
+                    .copyWith(
+                        color: textColor ?? Theme.of(context).primaryColor)
+                    .merge(labelStyle),
+              )
+            : const SizedBox(),
       ),
+    );
+  }
+
+  RoundedRectangleBorder get rectangleShape {
+    return RoundedRectangleBorder(
+      borderRadius:
+          BorderRadius.circular(borderRadius ?? Dimens.defaultPaddingValue),
     );
   }
 }

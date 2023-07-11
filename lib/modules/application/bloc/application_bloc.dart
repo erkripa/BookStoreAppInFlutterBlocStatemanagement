@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:course_app/modules/home/pages/home_tab.dart';
+import 'package:course_app/modules/profile/profile_tab.dart';
 import 'package:course_app/widgets/common/keep_alive_page%20copy.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,7 @@ class ApplicationBloc extends Bloc<ApplicationEvent, ApplicationState> {
     KeepAlivePage(child: Container(color: Colors.amber)),
     KeepAlivePage(child: Container(color: Colors.green)),
     KeepAlivePage(child: Container(color: Colors.pink)),
-    KeepAlivePage(child: Container(color: Colors.yellow)),
+    const KeepAlivePage(child: ProfileTabView()),
   ];
 
   FutureOr<void> _handlePage(

@@ -60,16 +60,35 @@ abstract class AppPages {
     return blocProviders;
   }
 
-  static MaterialPageRoute onGenerateRoute(RouteSettings settings) {
+  static PageRoute onGenerateRoute(RouteSettings settings) {
     final Iterable<BlocPage> result =
         _pages.where((BlocPage blocPage) => blocPage.routName == settings.name);
 
     if (result.isNotEmpty) {
       AppUtility.log("Page Created => '${settings.name}'");
-      return MaterialPageRoute(builder: (_) => result.first.page.call());
+      return PageRouteBuilder(
+        pageBuilder: (BuildContext context, Animation<double> animation,
+            Animation<double> secondaryAnimation) {
+          const begin = Offset(1.0, 0.0);
+          const end = Offset.zero;
+          const curve = Curves.ease;
+          var tween =
+              Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+          return SlideTransition(
+            position: animation.drive(tween),
+            child: result.first.page.call(),
+          );
+        },
+        settings: settings,
+      );
     }
     AppUtility.log("Default Created => '${settings.name}'");
-    return MaterialPageRoute(builder: (_) => const LoginPage());
+    return PageRouteBuilder(
+      pageBuilder: (BuildContext context, Animation<double> animation,
+              Animation<double> secondaryAnimation) =>
+          const LoginPage(),
+      settings: settings,
+    );
   }
 }
 

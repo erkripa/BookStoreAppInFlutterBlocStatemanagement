@@ -1,6 +1,8 @@
 import 'package:course_app/utils/dimens.dart';
 import 'package:course_app/utils/styles/app_text_style.dart';
+import 'package:course_app/widgets/common/primary_icon_btn.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class AyushAppBar extends StatelessWidget implements PreferredSizeWidget {
   const AyushAppBar({
@@ -16,6 +18,7 @@ class AyushAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.actions,
     this.leadingIcon,
     this.leading,
+    this.titleCenter = false,
   }) : super(key: key);
 
   final String? title;
@@ -25,6 +28,7 @@ class AyushAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? leading;
   final Color? backBtnColor;
   final bool? showBackBtn;
+  final bool titleCenter;
   final IconData? leadingIcon;
   final EdgeInsets? padding;
   final Color? bgColor;
@@ -36,16 +40,19 @@ class AyushAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: bgColor,
       titleSpacing: Dimens.zero,
       elevation: 0,
+      forceMaterialTransparency: true,
       title: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment:
+            titleCenter ? MainAxisAlignment.center : MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: [
-          leading ?? Icon(leadingIcon),
-          if (showBackBtn == true && leadingIcon == null) const BackButton(),
+          showBackBtn == true ? leading ?? buildLeading() : const SizedBox(),
           Expanded(
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: titleCenter
+                  ? MainAxisAlignment.center
+                  : MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 if (child != null) child!,
@@ -54,7 +61,7 @@ class AyushAppBar extends StatelessWidget implements PreferredSizeWidget {
                   Text(
                     title!,
                     style: titleStyle ??
-                        AppStyles.style20Bold.copyWith(
+                        AppStyles.style16Bold.copyWith(
                             color: Theme.of(context).textTheme.bodyLarge!.color,
                             fontFamily: AppStyles.defaultFontFamily2),
                   ),
@@ -64,6 +71,15 @@ class AyushAppBar extends StatelessWidget implements PreferredSizeWidget {
         ],
       ),
       actions: actions,
+    );
+  }
+
+  Widget buildLeading() {
+    return AyushIconButton(
+      onTap: () {},
+      icon: GetPlatform.isAndroid
+          ? leadingIcon ?? Icons.arrow_back_rounded
+          : Icons.arrow_back_ios_new_rounded,
     );
   }
 

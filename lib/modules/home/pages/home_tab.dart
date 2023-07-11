@@ -5,6 +5,8 @@ import 'package:course_app/widgets/common/primary_icon_btn.dart';
 import 'package:flutter/material.dart';
 
 import 'components/build_banners.dart';
+import 'components/build_choice_heading.dart';
+import 'components/course_card_section.dart';
 import 'components/search_section.dart';
 
 class HomeTabView extends StatelessWidget {
@@ -14,8 +16,7 @@ class HomeTabView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AyushAppBar(
-        showBackBtn: false,
-        leading: buildLeading(),
+        leadingIcon: Icons.menu_open_outlined,
         actions: [
           AyushIconButton(
             onTap: () {},
@@ -23,32 +24,32 @@ class HomeTabView extends StatelessWidget {
           ),
         ],
       ),
-      body: Container(
-        color: Theme.of(context).cardColor,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Padding(
-              padding: Dimens.defaultPadding,
-              child: Text(
-                "Hello,Ayush",
-                style: AppStyles.style20Bold,
-              ),
-            ),
-            //banners
-            const BannerView(),
-            //Search
-            const SearchSection()
-          ],
-        ),
-      ),
-    );
-  }
+      body: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Padding(
+                  padding: Dimens.defaultPadding.copyWith(bottom: 0),
+                  child: Text(
+                    "Hello,Ayush",
+                    style: AppStyles.style20Bold,
+                  ),
+                ),
+                //Search
+                const SearchSection(),
+                //banners
+                const BannerView(),
+                //choice your courses
+                const BuildChoiceHeading(),
 
-  Widget buildLeading() {
-    return AyushIconButton(
-      onTap: () {},
-      icon: Icons.menu_open_outlined,
+                const CourseCardSection(),
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 }

@@ -7,12 +7,13 @@ import 'package:course_app/utils/dimens.dart';
 import 'package:course_app/utils/styles/app_text_style.dart';
 import 'package:course_app/utils/styles/decorations.dart';
 import 'package:course_app/widgets/common/loading_widget.dart';
-import 'package:course_app/widgets/common/primary_text_btn.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import '../widgets/common/primary_text_btn.dart';
 
 abstract class AppUtility {
   /// _Logger
@@ -209,7 +210,7 @@ abstract class AppUtility {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          ASTextButton(
+                          AyushTextButton(
                             label: AppStrings.no,
                             labelStyle: AppStyles.style16Bold.copyWith(
                               color: AppColors.errorColor,
@@ -218,7 +219,7 @@ abstract class AppUtility {
                             padding: Dimens.edgeInsets8,
                           ),
                           Dimens.boxWidth16,
-                          ASTextButton(
+                          AyushTextButton(
                             label: AppStrings.yes,
                             labelStyle: AppStyles.style16Bold.copyWith(
                               color: AppColors.successColor,

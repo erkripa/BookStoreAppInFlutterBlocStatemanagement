@@ -157,6 +157,7 @@ mixin DarkThemeMixin {
   AppBarTheme darkAppBarTheme() {
     return AppBarTheme(
       backgroundColor: AppColors.darkBgColor,
+      elevation: 0,
       systemOverlayStyle: darkSystemUIOverlayStyle(),
     );
   }

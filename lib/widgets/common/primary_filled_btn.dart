@@ -1,7 +1,6 @@
 import 'package:course_app/utils/app_colors.dart';
 import 'package:course_app/utils/dimens.dart';
 import 'package:course_app/utils/styles/app_text_style.dart';
-import 'package:course_app/widgets/common/ripple_effect.dart';
 import 'package:flutter/material.dart';
 
 class AyushFilledButton extends StatelessWidget {
@@ -20,6 +19,11 @@ class AyushFilledButton extends StatelessWidget {
     this.width,
     this.height,
     this.labelStyle,
+    this.enabled = true,
+    this.size,
+    this.child,
+    this.isCircle = false,
+    this.borderWidth,
   }) : super(key: key);
 
   final Color? bgColor;
@@ -35,45 +39,64 @@ class AyushFilledButton extends StatelessWidget {
   final double? width;
   final double? height;
   final TextStyle? labelStyle;
+  final bool enabled;
+  final double? size;
+  final Widget? child;
+  final bool isCircle;
+  final double? borderWidth;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: margin,
-      child: RippleEffect(
-        onTap: onTap,
-        radius: borderRadius,
-        child: Container(
-          width: width,
-          height: height,
-          padding: padding,
-          constraints: BoxConstraints(maxWidth: Dimens.screenWidth),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(borderRadius ?? Dimens.four),
-            color: bgColor ?? AppColors.primaryColor,
-          ),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              if (prefix != null) prefix!,
-              if (prefix != null) Dimens.boxWidth4,
-              Text(
-                label,
-                style: labelStyle ??
-                    AppStyles.style16Bold.copyWith(
-                      color: labelColor ??
-                          Theme.of(context).textTheme.titleLarge!.color,
-                      fontSize: fontSize ?? Dimens.sixTeen,
-                    ),
-              ),
-              if (suffix != null) Dimens.boxWidth4,
-              if (suffix != null) suffix!,
-            ],
-          ),
+      child: ElevatedButton(
+        onPressed: enabled == true ? onTap : null,
+        style: ElevatedButton.styleFrom(
+          padding: padding ?? EdgeInsets.zero,
+          shape: isCircle ? null : rectangleShape,
+          maximumSize: size != null ? Size.square(size!) : null,
+          minimumSize: size != null ? Size.square(size!) : null,
+          backgroundColor: Theme.of(context).primaryColor,
+          disabledBackgroundColor: Colors.white,
+          side: borderWidth == null
+              ? BorderSide.none
+              : BorderSide(
+                  width: borderWidth!,
+                  color: AppColors.grayshade,
+                  style: BorderStyle.solid,
+                ),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            if (prefix != null) prefix!,
+            if (prefix != null) Dimens.boxWidth4,
+            Text(
+              label,
+              style: AppStyles.style14Bold
+                  .copyWith(
+                    color: enabled == true
+                        ? labelColor ??
+                            Theme.of(context).textTheme.titleLarge!.color
+                        : Theme.of(context).disabledColor,
+                  )
+                  .merge(labelStyle)
+                  .copyWith(fontSize: fontSize),
+            ),
+            if (suffix != null) Dimens.boxWidth4,
+            if (suffix != null) suffix!,
+          ],
         ),
       ),
+    );
+  }
+
+  RoundedRectangleBorder get rectangleShape {
+    return RoundedRectangleBorder(
+      borderRadius:
+          BorderRadius.circular(borderRadius ?? Dimens.defaultPaddingValue),
     );
   }
 }

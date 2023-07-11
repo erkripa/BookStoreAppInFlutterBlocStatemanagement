@@ -310,6 +310,27 @@ abstract class AppStyles {
         ),
       ];
 
+  static List<BoxShadow> get bottomNavbarShadow => [
+        BoxShadow(
+          color: kShadowColor.withAlpha(14),
+          blurRadius: Dimens.four,
+          spreadRadius: Dimens.three,
+          offset: Offset(Dimens.zero, Dimens.three),
+        ),
+        BoxShadow(
+          color: kShadowColor.withAlpha(12),
+          blurRadius: Dimens.three,
+          spreadRadius: -Dimens.two,
+          offset: Offset(Dimens.zero, Dimens.three),
+        ),
+        BoxShadow(
+          color: kShadowColor.withAlpha(2),
+          blurRadius: Dimens.eight,
+          spreadRadius: Dimens.zero,
+          offset: Offset(Dimens.zero, Dimens.one),
+        ),
+      ];
+
   static TextStyle get textfieldHintTextStyel =>
       TextStyle(color: Colors.grey, fontSize: Dimens.f14);
 

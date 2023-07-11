@@ -1,4 +1,5 @@
 import 'package:course_app/utils/dimens.dart';
+import 'package:course_app/utils/styles/app_text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -49,6 +50,7 @@ class AppLicationBottomNavigationBar extends StatelessWidget {
                   topRight: Radius.circular(Dimens.r15),
                 ),
                 color: bgColor ?? Theme.of(context).cardColor,
+                boxShadow: AppStyles.bottomNavbarShadow,
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -134,8 +136,8 @@ class AppLicationBottomNavigationBar extends StatelessWidget {
     ApplicationState state,
   ) {
     return BottomNavItem(
-      icon: Icons.library_books_outlined,
-      title: "Course",
+      icon: Icons.account_circle_outlined,
+      title: "Account",
       iconColor: Theme.of(context).textTheme.bodyLarge!.color,
       isActive: state.currentPageIndex == 4,
       itemsCount: 5,

@@ -3,3 +3,9 @@ enum Status {
   error,
   done,
 }
+
+enum CourseChoice {
+  all,
+  populars,
+  newest,
+}
