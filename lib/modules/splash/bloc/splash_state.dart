@@ -1,4 +1,4 @@
-import 'package:course_app/enums/enums.dart';
+import 'package:kahani_box/enums/enums.dart';
 
 class SplashState {
   final Status? status;

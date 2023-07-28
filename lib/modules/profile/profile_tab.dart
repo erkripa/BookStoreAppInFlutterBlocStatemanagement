@@ -1,11 +1,11 @@
-import 'package:course_app/assets/app_assets.dart';
-import 'package:course_app/modules/profile/components/profile_actions_card.dart';
-import 'package:course_app/utils/app_colors.dart';
-import 'package:course_app/utils/dimens.dart';
-import 'package:course_app/utils/styles/decorations.dart';
-import 'package:course_app/widgets/common/custom_app_bar.dart';
-import 'package:course_app/widgets/common/primary_icon_btn.dart';
-import 'package:course_app/widgets/custom/custom_list_tile.dart';
+import 'package:kahani_box/assets/app_assets.dart';
+import 'package:kahani_box/modules/profile/components/profile_actions_card.dart';
+import 'package:kahani_box/utils/app_colors.dart';
+import 'package:kahani_box/utils/dimens.dart';
+import 'package:kahani_box/utils/styles/decorations.dart';
+import 'package:kahani_box/widgets/common/custom_app_bar.dart';
+import 'package:kahani_box/widgets/common/primary_icon_btn.dart';
+import 'package:kahani_box/widgets/custom/custom_list_tile.dart';
 import 'package:flutter/material.dart';
 
 class ProfileTabView extends StatelessWidget {

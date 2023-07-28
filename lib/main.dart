@@ -1,7 +1,7 @@
-import 'package:course_app/core/providers.dart';
-import 'package:course_app/routes/app_pages.dart';
-import 'package:course_app/themes/cubit/theme_cubit.dart';
-import 'package:course_app/translations/app_translations.dart';
+import 'package:kahani_box/core/providers.dart';
+import 'package:kahani_box/routes/app_pages.dart';
+import 'package:kahani_box/themes/cubit/theme_cubit.dart';
+import 'package:kahani_box/translations/app_translations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -39,15 +39,14 @@ class MyApp extends StatelessWidget {
           return BlocBuilder<ThemeCubit, ThemeState>(
             builder: (context, state) {
               return GetMaterialApp(
-                title: 'Ayushona App',
+                title: 'KahaaniBox App',
                 debugShowCheckedModeBanner: false,
                 themeMode: _handleAppTheme(state.themeMode),
                 theme: context.read<ThemeCubit>().getLightThemeData(),
                 darkTheme: context.read<ThemeCubit>().getDarkThemeData(),
                 translations: AppTranslation(),
                 onGenerateRoute: AppPages.onGenerateRoute,
-                initialRoute: AppRoutes.splash,
-                // home: WelcomePage(),
+                initialRoute: AppRoutes.initial,
               );
             },
           );

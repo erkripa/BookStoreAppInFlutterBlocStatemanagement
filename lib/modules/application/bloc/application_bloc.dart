@@ -1,7 +1,7 @@
 import 'dart:async';
-import 'package:course_app/modules/home/pages/home_tab.dart';
-import 'package:course_app/modules/profile/profile_tab.dart';
-import 'package:course_app/widgets/common/keep_alive_page%20copy.dart';
+import 'package:kahani_box/modules/home/pages/home_tab.dart';
+import 'package:kahani_box/modules/profile/profile_tab.dart';
+import 'package:kahani_box/widgets/common/keep_alive_page%20copy.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

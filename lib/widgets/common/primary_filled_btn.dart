@@ -1,6 +1,6 @@
-import 'package:course_app/utils/app_colors.dart';
-import 'package:course_app/utils/dimens.dart';
-import 'package:course_app/utils/styles/app_text_style.dart';
+import 'package:kahani_box/utils/app_colors.dart';
+import 'package:kahani_box/utils/dimens.dart';
+import 'package:kahani_box/utils/styles/app_text_style.dart';
 import 'package:flutter/material.dart';
 
 class AyushFilledButton extends StatelessWidget {
@@ -65,6 +65,8 @@ class AyushFilledButton extends StatelessWidget {
                   color: AppColors.grayshade,
                   style: BorderStyle.solid,
                 ),
+          elevation: 4,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,

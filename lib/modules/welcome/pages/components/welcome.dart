@@ -1,5 +1,5 @@
-import 'package:course_app/assets/app_assets.dart';
-import 'package:course_app/widgets/common/asset_image.dart';
+import 'package:kahani_box/assets/app_assets.dart';
+import 'package:kahani_box/widgets/common/asset_image.dart';
 import 'package:flutter/material.dart';
 
 class Weclome extends StatelessWidget {

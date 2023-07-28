@@ -1,11 +1,11 @@
-import 'package:course_app/constants/app_constant.dart';
-import 'package:course_app/enums/enums.dart';
-import 'package:course_app/routes/route_management.dart';
-import 'package:course_app/services/hive_service.dart';
-import 'package:course_app/splash/bloc/splash_bloc.dart';
-import 'package:course_app/splash/bloc/splash_state.dart';
-import 'package:course_app/utils/utility.dart';
-import 'package:course_app/widgets/common/circular_progress_indicator.dart';
+import 'package:kahani_box/constants/app_constant.dart';
+import 'package:kahani_box/enums/enums.dart';
+import 'package:kahani_box/routes/route_management.dart';
+import 'package:kahani_box/services/hive_service.dart';
+import 'package:kahani_box/modules/splash/bloc/splash_bloc.dart';
+import 'package:kahani_box/modules/splash/bloc/splash_state.dart';
+import 'package:kahani_box/utils/utility.dart';
+import 'package:kahani_box/widgets/common/circular_progress_indicator.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';

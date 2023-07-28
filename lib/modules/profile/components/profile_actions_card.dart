@@ -1,5 +1,5 @@
-import 'package:course_app/modules/profile/components/rounded_card.dart';
-import 'package:course_app/utils/dimens.dart';
+import 'package:kahani_box/modules/profile/components/rounded_card.dart';
+import 'package:kahani_box/utils/dimens.dart';
 import 'package:flutter/material.dart';
 
 class ProfileActionsCard extends StatelessWidget {
@@ -11,7 +11,7 @@ class ProfileActionsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: Dimens.defaultPadding,
-      margin: Dimens.edgeInsetsOnlyTop16,
+      margin: Dimens.onlyTop16,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

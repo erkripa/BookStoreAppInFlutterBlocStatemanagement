@@ -1,4 +1,4 @@
-import 'package:course_app/utils/dimens.dart';
+import 'package:kahani_box/utils/dimens.dart';
 import 'package:flutter/material.dart';
 
 class AyushCircleAssetImage extends StatelessWidget {

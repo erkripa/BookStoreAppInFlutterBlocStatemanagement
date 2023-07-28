@@ -1,5 +1,5 @@
-import 'package:course_app/utils/app_colors.dart';
-import 'package:course_app/utils/dimens.dart';
+import 'package:kahani_box/utils/app_colors.dart';
+import 'package:kahani_box/utils/dimens.dart';
 import 'package:flutter/material.dart';
 
 abstract class AppStyles {
@@ -319,13 +319,13 @@ abstract class AppStyles {
         ),
         BoxShadow(
           color: kShadowColor.withAlpha(12),
-          blurRadius: Dimens.three,
+          blurRadius: Dimens.four,
           spreadRadius: -Dimens.two,
           offset: Offset(Dimens.zero, Dimens.three),
         ),
         BoxShadow(
           color: kShadowColor.withAlpha(2),
-          blurRadius: Dimens.eight,
+          blurRadius: Dimens.ten,
           spreadRadius: Dimens.zero,
           offset: Offset(Dimens.zero, Dimens.one),
         ),

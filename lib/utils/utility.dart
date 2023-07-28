@@ -1,12 +1,12 @@
 import 'dart:math';
 
-import 'package:course_app/constants/app_strings.dart';
-import 'package:course_app/extensions/string_extensions.dart';
-import 'package:course_app/utils/app_colors.dart';
-import 'package:course_app/utils/dimens.dart';
-import 'package:course_app/utils/styles/app_text_style.dart';
-import 'package:course_app/utils/styles/decorations.dart';
-import 'package:course_app/widgets/common/loading_widget.dart';
+import 'package:kahani_box/constants/app_strings.dart';
+import 'package:kahani_box/extensions/string_extensions.dart';
+import 'package:kahani_box/utils/app_colors.dart';
+import 'package:kahani_box/utils/dimens.dart';
+import 'package:kahani_box/utils/styles/app_text_style.dart';
+import 'package:kahani_box/utils/styles/decorations.dart';
+import 'package:kahani_box/widgets/common/loading_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -82,8 +82,8 @@ abstract class AppUtility {
           backgroundColor: Colors.transparent,
           body: Center(
             child: Container(
-              padding: Dimens.edgeInsets16,
-              margin: Dimens.edgeInsets16,
+              padding: Dimens.edgeA16,
+              margin: Dimens.edgeA16,
               decoration: BoxDecoration(
                 color: Theme.of(Get.context!).dialogTheme.backgroundColor,
                 borderRadius: BorderRadius.circular(Dimens.eight),
@@ -134,7 +134,7 @@ abstract class AppUtility {
             maxWidth: Dimens.hundred * 6,
           ),
           child: Padding(
-            padding: Dimens.edgeInsets12,
+            padding: Dimens.edgeA12,
             child: Align(
               alignment: Alignment.center,
               child: Material(
@@ -172,7 +172,7 @@ abstract class AppUtility {
             maxWidth: Dimens.hundred * 6,
           ),
           child: Padding(
-            padding: Dimens.edgeInsets12,
+            padding: Dimens.edgeA12,
             child: Align(
               alignment: Alignment.center,
               child: Material(
@@ -188,7 +188,7 @@ abstract class AppUtility {
                   children: [
                     Dimens.boxHeight8,
                     Padding(
-                      padding: Dimens.edgeInsetsHorizDefault,
+                      padding: Dimens.edgeH12,
                       child: Text(
                         AppStrings.delete,
                         textAlign: TextAlign.center,
@@ -197,7 +197,7 @@ abstract class AppUtility {
                     ),
                     Dimens.boxHeight10,
                     Padding(
-                      padding: Dimens.edgeInsetsHorizDefault,
+                      padding: Dimens.edgeH12,
                       child: Text(
                         AppStrings.deleteConfirmationText,
                         textAlign: TextAlign.center,
@@ -206,7 +206,7 @@ abstract class AppUtility {
                     ),
                     Dimens.boxHeight8,
                     Padding(
-                      padding: Dimens.edgeInsetsHorizDefault,
+                      padding: Dimens.edgeH12,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -216,7 +216,7 @@ abstract class AppUtility {
                               color: AppColors.errorColor,
                             ),
                             onTap: AppUtility.closeDialog,
-                            padding: Dimens.edgeInsets8,
+                            padding: Dimens.edgeA8,
                           ),
                           Dimens.boxWidth16,
                           AyushTextButton(
@@ -225,7 +225,7 @@ abstract class AppUtility {
                               color: AppColors.successColor,
                             ),
                             onTap: () => onDelete(),
-                            padding: Dimens.edgeInsets8,
+                            padding: Dimens.edgeA8,
                           ),
                         ],
                       ),
@@ -277,7 +277,7 @@ abstract class AppUtility {
         ),
       ),
       backgroundColor: AppColors.errorColor,
-      margin: Dimens.edgeInsets16,
+      margin: Dimens.edgeA16,
       borderRadius: Dimens.fifteen,
       snackStyle: SnackStyle.FLOATING,
     );
@@ -292,7 +292,7 @@ abstract class AppUtility {
         onWillPop: () async => false,
         child: Scaffold(
           body: Padding(
-            padding: Dimens.edgeInsets16,
+            padding: Dimens.edgeA16,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -329,7 +329,7 @@ abstract class AppUtility {
       onWillPop: () async => false,
       child: Scaffold(
         body: Padding(
-          padding: Dimens.edgeInsets16,
+          padding: Dimens.edgeA16,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -373,7 +373,7 @@ abstract class AppUtility {
     closeBottomSheet();
     Get.bottomSheet(
       Padding(
-        padding: Dimens.edgeInsets8_0,
+        padding: Dimens.edgeV8,
         child: Column(
           mainAxisAlignment: mainAxisAlignment ?? MainAxisAlignment.start,
           crossAxisAlignment: crossAxisAlignment ?? CrossAxisAlignment.center,
@@ -438,7 +438,7 @@ abstract class AppUtility {
           child: Container(
             padding: Dimens.defaultPadding,
             decoration: BoxDecoration(
-              color: AppColors.scaffoldColor,
+              color: AppColors.backgroundColor,
               boxShadow: [
                 BoxShadow(
                   color: Colors.black.withOpacity(0.2),
@@ -450,7 +450,7 @@ abstract class AppUtility {
             width: width ?? MediaQuery.of(context).size.width,
             height: height ?? MediaQuery.of(context).size.height / 2.5,
             child: Material(
-              color: AppColors.scaffoldColor,
+              color: AppColors.backgroundColor,
               child: Column(
                 crossAxisAlignment:
                     crossAxisAlignment ?? CrossAxisAlignment.start,
@@ -492,7 +492,7 @@ abstract class AppUtility {
           bottom: Dimens.zero,
         ),
         borderRadius: Dimens.zero,
-        padding: Dimens.edgeInsets16_12,
+        padding: Dimens.edgeV16H12,
         snackStyle: SnackStyle.FLOATING,
         snackPosition: SnackPosition.BOTTOM,
         borderWidth: Dimens.zero,
@@ -508,7 +508,7 @@ abstract class AppUtility {
           size: Dimens.twenty,
         ),
         mainButton: Padding(
-          padding: Dimens.edgeInsets0_8,
+          padding: Dimens.edgeH8,
           child: TextButton(
             onPressed: closeSnackBar,
             child: Text(

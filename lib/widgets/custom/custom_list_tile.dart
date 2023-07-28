@@ -1,9 +1,9 @@
-import 'package:course_app/utils/app_colors.dart';
-import 'package:course_app/utils/dimens.dart';
-import 'package:course_app/utils/styles/app_text_style.dart';
-import 'package:course_app/utils/styles/decorations.dart';
-import 'package:course_app/widgets/common/primary_icon_btn.dart';
-import 'package:course_app/widgets/common/ripple_effect.dart';
+import 'package:kahani_box/utils/app_colors.dart';
+import 'package:kahani_box/utils/dimens.dart';
+import 'package:kahani_box/utils/styles/app_text_style.dart';
+import 'package:kahani_box/utils/styles/decorations.dart';
+import 'package:kahani_box/widgets/common/primary_icon_btn.dart';
+import 'package:kahani_box/widgets/common/ripple_effect.dart';
 import 'package:flutter/material.dart';
 
 class AyushListTile extends StatelessWidget {

@@ -1,6 +1,6 @@
-import 'package:course_app/utils/dimens.dart';
-import 'package:course_app/utils/styles/app_text_style.dart';
-import 'package:course_app/widgets/common/primary_icon_btn.dart';
+import 'package:kahani_box/utils/dimens.dart';
+import 'package:kahani_box/utils/styles/app_text_style.dart';
+import 'package:kahani_box/widgets/common/primary_icon_btn.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -40,7 +40,6 @@ class AyushAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: bgColor,
       titleSpacing: Dimens.zero,
       elevation: 0,
-      forceMaterialTransparency: true,
       title: Row(
         mainAxisAlignment:
             titleCenter ? MainAxisAlignment.center : MainAxisAlignment.start,
@@ -77,9 +76,11 @@ class AyushAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget buildLeading() {
     return AyushIconButton(
       onTap: () {},
-      icon: GetPlatform.isAndroid
-          ? leadingIcon ?? Icons.arrow_back_rounded
-          : Icons.arrow_back_ios_new_rounded,
+      iconColor: backBtnColor,
+      icon: leadingIcon ??
+          (GetPlatform.isAndroid
+              ? Icons.arrow_back_rounded
+              : Icons.arrow_back_ios_new_rounded),
     );
   }
 

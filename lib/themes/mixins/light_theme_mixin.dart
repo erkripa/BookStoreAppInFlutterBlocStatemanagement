@@ -1,6 +1,6 @@
-import 'package:course_app/utils/app_colors.dart';
-import 'package:course_app/utils/dimens.dart';
-import 'package:course_app/utils/styles/app_text_style.dart';
+import 'package:kahani_box/utils/app_colors.dart';
+import 'package:kahani_box/utils/dimens.dart';
+import 'package:kahani_box/utils/styles/app_text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -17,7 +17,7 @@ mixin LightThemeMixin {
 
   AppBarTheme lightAppBarTheme() {
     return AppBarTheme(
-      backgroundColor: AppColors.transparent,
+      backgroundColor: AppColors.primaryColor,
       elevation: -0.9,
       shadowColor: Colors.transparent,
       systemOverlayStyle: lightSystemUiOverlayStyle(),
@@ -86,7 +86,7 @@ mixin LightThemeMixin {
         // maxHeight: Dimens.fiftySix,
         maxWidth: Dimens.screenWidth,
       ),
-      contentPadding: Dimens.edgeInsets0_12,
+      contentPadding: Dimens.edgeH12,
       labelStyle: AppStyles.style14Normal.copyWith(
         color: AppColors.primaryLightColor,
       ),

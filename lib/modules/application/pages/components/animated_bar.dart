@@ -1,5 +1,5 @@
-import 'package:course_app/utils/app_colors.dart';
-import 'package:course_app/utils/dimens.dart';
+import 'package:kahani_box/utils/app_colors.dart';
+import 'package:kahani_box/utils/dimens.dart';
 import 'package:flutter/material.dart';
 
 class AnimatedBar extends StatelessWidget {
@@ -13,7 +13,7 @@ class AnimatedBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
-      margin: Dimens.edgeInsetsOnlyBottom2,
+      margin: Dimens.onlyBottom12,
       duration: const Duration(milliseconds: 500),
       height: Dimens.four,
       width: isActive ? Dimens.twenty : Dimens.zero,

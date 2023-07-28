@@ -1,4 +1,4 @@
-import 'package:course_app/modules/register/bloc/register_state.dart';
+import 'package:kahani_box/modules/register/bloc/register_state.dart';
 
 class RegisterRepo {
   Future<void> register(RegisterState state) async {

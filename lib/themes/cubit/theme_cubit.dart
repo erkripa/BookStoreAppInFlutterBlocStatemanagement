@@ -1,13 +1,12 @@
-import 'package:course_app/services/hive_service.dart';
-import 'package:course_app/themes/mixins/dark_theme_mixin.dart';
-import 'package:course_app/themes/mixins/light_theme_mixin.dart';
-import 'package:course_app/utils/app_colors.dart';
-import 'package:course_app/utils/utility.dart';
+import 'package:kahani_box/services/hive_service.dart';
+import 'package:kahani_box/themes/mixins/dark_theme_mixin.dart';
+import 'package:kahani_box/themes/mixins/light_theme_mixin.dart';
+import 'package:kahani_box/utils/app_colors.dart';
+import 'package:kahani_box/utils/utility.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 part 'theme_state.dart';
 
 class ThemeCubit extends Cubit<ThemeState>
@@ -35,7 +34,10 @@ class ThemeCubit extends Cubit<ThemeState>
     _getSystemChromeData();
     return ThemeData(
       useMaterial3: true,
-      colorSchemeSeed: AppColors.primaryColor,
+      colorScheme: ColorScheme.fromSeed(
+        seedColor: AppColors.primaryColor,
+        primary: AppColors.primaryColor,
+      ),
       primaryColorLight: AppColors.primaryLightColor,
       iconTheme: const IconThemeData(color: AppColors.darkerGrayColor),
       scaffoldBackgroundColor: AppColors.whiteColor,

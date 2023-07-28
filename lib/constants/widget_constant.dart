@@ -1,4 +1,4 @@
-import 'package:course_app/assets/app_assets.dart';
+import 'package:kahani_box/assets/app_assets.dart';
 
 class WidgetConstant {
   static List<String> homeBanners = [

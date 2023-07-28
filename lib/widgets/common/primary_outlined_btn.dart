@@ -1,7 +1,6 @@
-import 'package:course_app/utils/app_colors.dart';
-import 'package:course_app/utils/dimens.dart';
-import 'package:course_app/utils/styles/app_text_style.dart';
-import 'package:course_app/widgets/common/ripple_effect.dart';
+import 'package:kahani_box/utils/app_colors.dart';
+import 'package:kahani_box/utils/dimens.dart';
+import 'package:kahani_box/utils/styles/app_text_style.dart';
 import 'package:flutter/material.dart';
 
 class AyushOutlinedButton extends StatelessWidget {
@@ -62,7 +61,7 @@ class AyushOutlinedButton extends StatelessWidget {
           maximumSize: size != null ? Size.square(size!) : null,
           minimumSize: size != null ? Size.square(size!) : null,
           disabledBackgroundColor: Colors.white,
-          side: BorderSide(
+          side: const BorderSide(
             width: 0.8,
             color: AppColors.primaryColor,
             style: BorderStyle.solid,
@@ -77,12 +76,12 @@ class AyushOutlinedButton extends StatelessWidget {
             if (prefix != null) Dimens.boxWidth4,
             Text(
               label,
-              style: labelStyle ??
-                  AppStyles.style16Bold.copyWith(
-                    color: labelColor ??
-                        Theme.of(context).textTheme.bodyLarge!.color,
-                    fontSize: fontSize ?? Dimens.sixTeen,
-                  ),
+              style: AppStyles.style14Bold
+                  .copyWith(
+                      color: labelColor ??
+                          Theme.of(context).textTheme.bodyLarge!.color,
+                      fontSize: fontSize ?? Dimens.sixTeen)
+                  .merge(labelStyle),
             ),
             if (suffix != null) Dimens.boxWidth4,
             if (suffix != null) suffix!,

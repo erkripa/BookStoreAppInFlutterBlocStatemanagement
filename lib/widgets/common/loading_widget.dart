@@ -1,5 +1,5 @@
-import 'package:course_app/utils/dimens.dart';
-import 'package:course_app/utils/styles/app_text_style.dart';
+import 'package:kahani_box/utils/dimens.dart';
+import 'package:kahani_box/utils/styles/app_text_style.dart';
 import 'package:flutter/material.dart';
 
 class LoadingWidget extends StatelessWidget {

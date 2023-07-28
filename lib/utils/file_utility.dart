@@ -1,8 +1,8 @@
 import 'dart:developer';
 import 'dart:io';
 
-import 'package:course_app/extensions/file_extensions.dart';
-import 'package:course_app/utils/utility.dart';
+import 'package:kahani_box/extensions/file_extensions.dart';
+import 'package:kahani_box/utils/utility.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_image_compress/flutter_image_compress.dart';

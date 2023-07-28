@@ -1,5 +1,5 @@
-import 'package:course_app/utils/dimens.dart';
-import 'package:course_app/utils/styles/app_text_style.dart';
+import 'package:kahani_box/utils/dimens.dart';
+import 'package:kahani_box/utils/styles/app_text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -43,7 +43,7 @@ class AppLicationBottomNavigationBar extends StatelessWidget {
             child: Container(
               height: height ?? Dimens.h10 * 8,
               width: Dimens.screenWidth,
-              padding: padding ?? Dimens.edgeInsets4.copyWith(bottom: 0),
+              padding: padding ?? Dimens.edgeA4.copyWith(bottom: 0),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(Dimens.r15),

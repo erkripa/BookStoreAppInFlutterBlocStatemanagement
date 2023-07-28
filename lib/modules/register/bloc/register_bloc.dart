@@ -1,7 +1,7 @@
-import 'package:course_app/enums/enums.dart';
-import 'package:course_app/modules/register/bloc/register_event.dart';
-import 'package:course_app/modules/register/bloc/register_state.dart';
-import 'package:course_app/modules/register/repo/register_repo.dart';
+import 'package:kahani_box/enums/enums.dart';
+import 'package:kahani_box/modules/register/bloc/register_event.dart';
+import 'package:kahani_box/modules/register/bloc/register_state.dart';
+import 'package:kahani_box/modules/register/repo/register_repo.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {

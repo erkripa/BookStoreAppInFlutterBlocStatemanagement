@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:course_app/utils/app_colors.dart';
-import 'package:course_app/utils/dimens.dart';
+import 'package:kahani_box/utils/app_colors.dart';
+import 'package:kahani_box/utils/dimens.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

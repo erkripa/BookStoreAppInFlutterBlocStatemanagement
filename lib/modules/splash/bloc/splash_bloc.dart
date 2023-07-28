@@ -1,6 +1,6 @@
-import 'package:course_app/enums/enums.dart';
-import 'package:course_app/splash/bloc/splash_event.dart';
-import 'package:course_app/splash/bloc/splash_state.dart';
+import 'package:kahani_box/enums/enums.dart';
+import 'package:kahani_box/modules/splash/bloc/splash_event.dart';
+import 'package:kahani_box/modules/splash/bloc/splash_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SplashBloc extends Bloc<SplashEvent, SplashState> {

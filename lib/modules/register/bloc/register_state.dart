@@ -1,4 +1,4 @@
-import 'package:course_app/enums/enums.dart';
+import 'package:kahani_box/enums/enums.dart';
 import 'package:equatable/equatable.dart';
 
 class RegisterState extends Equatable {

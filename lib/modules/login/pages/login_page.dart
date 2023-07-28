@@ -1,15 +1,15 @@
-import 'package:course_app/enums/enums.dart';
-import 'package:course_app/modules/login/bloc/login_bloc.dart';
-import 'package:course_app/routes/route_management.dart';
-import 'package:course_app/utils/app_colors.dart';
-import 'package:course_app/utils/dimens.dart';
-import 'package:course_app/utils/styles/app_text_style.dart';
-import 'package:course_app/widgets/common/circular_progress_indicator.dart';
-import 'package:course_app/widgets/common/primary_filled_btn.dart';
-import 'package:course_app/widgets/common/primary_icon_btn.dart';
-import 'package:course_app/widgets/common/primary_outlined_btn.dart';
-import 'package:course_app/widgets/common/primary_text_btn.dart';
-import 'package:course_app/widgets/custom/custom_text_field_widget.dart';
+import 'package:kahani_box/enums/enums.dart';
+import 'package:kahani_box/modules/login/bloc/login_bloc.dart';
+import 'package:kahani_box/routes/route_management.dart';
+import 'package:kahani_box/utils/app_colors.dart';
+import 'package:kahani_box/utils/dimens.dart';
+import 'package:kahani_box/utils/styles/app_text_style.dart';
+import 'package:kahani_box/widgets/common/circular_progress_indicator.dart';
+import 'package:kahani_box/widgets/common/primary_filled_btn.dart';
+import 'package:kahani_box/widgets/common/primary_icon_btn.dart';
+import 'package:kahani_box/widgets/common/primary_outlined_btn.dart';
+import 'package:kahani_box/widgets/common/primary_text_btn.dart';
+import 'package:kahani_box/widgets/custom/custom_text_field_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -136,8 +136,8 @@ class _PasswordInput extends StatelessWidget {
               child: AyushTextButton(
                 label: "Forgot Password",
                 onTap: () {},
-                margin: Dimens.edgeInsetsRight8,
-                padding: Dimens.edgeInsets4,
+                margin: Dimens.onlyRight8,
+                padding: Dimens.edgeA4,
               ),
             )
           ],
