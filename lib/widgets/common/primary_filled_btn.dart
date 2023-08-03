@@ -24,6 +24,7 @@ class AyushFilledButton extends StatelessWidget {
     this.child,
     this.isCircle = false,
     this.borderWidth,
+    this.elevation = 4,
   }) : super(key: key);
 
   final Color? bgColor;
@@ -44,6 +45,7 @@ class AyushFilledButton extends StatelessWidget {
   final Widget? child;
   final bool isCircle;
   final double? borderWidth;
+  final double? elevation;
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +58,7 @@ class AyushFilledButton extends StatelessWidget {
           shape: isCircle ? null : rectangleShape,
           maximumSize: size != null ? Size.square(size!) : null,
           minimumSize: size != null ? Size.square(size!) : null,
-          backgroundColor: Theme.of(context).primaryColor,
+          backgroundColor: bgColor ?? Theme.of(context).primaryColor,
           disabledBackgroundColor: Colors.white,
           side: borderWidth == null
               ? BorderSide.none
@@ -65,7 +67,7 @@ class AyushFilledButton extends StatelessWidget {
                   color: AppColors.grayshade,
                   style: BorderStyle.solid,
                 ),
-          elevation: 4,
+          elevation: elevation,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         child: Row(

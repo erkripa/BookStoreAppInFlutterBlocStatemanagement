@@ -6,6 +6,8 @@ abstract class AppRoutes {
   static const welcome = _Routes.welcome;
   static const login = _Routes.login;
   static const signup = _Routes.signup;
+
+  static const bookDetailPage = _Routes.bookDetailPage;
 }
 
 abstract class _Routes {
@@ -15,4 +17,6 @@ abstract class _Routes {
 
   static const login = '/login_page';
   static const signup = '/signup_page';
+
+  static const bookDetailPage = "/book_detail_page";
 }

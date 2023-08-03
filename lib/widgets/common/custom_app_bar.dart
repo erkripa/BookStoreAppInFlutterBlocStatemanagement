@@ -8,7 +8,6 @@ class AyushAppBar extends StatelessWidget implements PreferredSizeWidget {
   const AyushAppBar({
     Key? key,
     this.title,
-    this.showDivider = false,
     this.child,
     this.showBackBtn = true,
     this.padding,
@@ -19,11 +18,13 @@ class AyushAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.leadingIcon,
     this.leading,
     this.titleCenter = false,
+    this.titleTextColor,
   }) : super(key: key);
 
   final String? title;
   final TextStyle? titleStyle;
-  final bool? showDivider;
+  final Color? titleTextColor;
+
   final Widget? child;
   final Widget? leading;
   final Color? backBtnColor;
@@ -61,7 +62,8 @@ class AyushAppBar extends StatelessWidget implements PreferredSizeWidget {
                     title!,
                     style: titleStyle ??
                         AppStyles.style16Bold.copyWith(
-                            color: Theme.of(context).textTheme.bodyLarge!.color,
+                            color: titleTextColor ??
+                                Theme.of(context).textTheme.titleLarge!.color,
                             fontFamily: AppStyles.defaultFontFamily2),
                   ),
               ],

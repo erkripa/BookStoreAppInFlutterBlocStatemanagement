@@ -1,5 +1,7 @@
 import 'package:kahani_box/modules/application/bloc/application_bloc.dart';
 import 'package:kahani_box/modules/application/pages/application_page.dart';
+import 'package:kahani_box/modules/details/bloc/detail_bloc.dart';
+import 'package:kahani_box/modules/details/pages/book_detail_page.dart';
 import 'package:kahani_box/modules/login/bloc/login_bloc.dart';
 import 'package:kahani_box/modules/login/pages/login_page.dart';
 import 'package:kahani_box/modules/register/bloc/register_bloc.dart';
@@ -7,7 +9,6 @@ import 'package:kahani_box/modules/register/pages/register_page.dart';
 import 'package:kahani_box/modules/welcome/bloc/welcome_bloc.dart';
 import 'package:kahani_box/modules/welcome/pages/welcome_page.dart';
 import 'package:kahani_box/modules/splash/bloc/splash_bloc.dart';
-import 'package:kahani_box/themes/cubit/theme_cubit.dart';
 import 'package:kahani_box/utils/utility.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -45,12 +46,15 @@ abstract class AppPages {
       page: LoginPage.new,
       bloc: BlocProvider(create: (context) => LoginBloc()),
     ),
+    BlocPage(
+      routName: AppRoutes.bookDetailPage,
+      page: BookDetailPage.new,
+      bloc: BlocProvider(create: (context) => DetailBloc()),
+    ),
   ];
 
   static List<dynamic> get routesBlocsProvider {
     List<dynamic> blocProviders = <dynamic>[];
-    //for theme
-    blocProviders.add(BlocProvider(create: (context) => ThemeCubit()));
 
     for (BlocPage bloc in _pages) {
       if (bloc.bloc != null) {
@@ -82,11 +86,20 @@ abstract class AppPages {
         settings: settings,
       );
     }
-    AppUtility.log("Default Created => '${settings.name}'");
+    AppUtility.log("Default Login Page Created => /login");
     return PageRouteBuilder(
       pageBuilder: (BuildContext context, Animation<double> animation,
-              Animation<double> secondaryAnimation) =>
-          const LoginPage(),
+          Animation<double> secondaryAnimation) {
+        const begin = Offset(1.0, 0.0);
+        const end = Offset.zero;
+        const curve = Curves.ease;
+        var tween =
+            Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+        return SlideTransition(
+          position: animation.drive(tween),
+          child: const LoginPage(),
+        );
+      },
       settings: settings,
     );
   }

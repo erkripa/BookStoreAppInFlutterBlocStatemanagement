@@ -21,4 +21,7 @@ abstract class RouteManagement {
       Navigator.pushNamed(context, AppRoutes.login);
 
   static void goToBack(BuildContext context) => Navigator.pop(context);
+
+  static goToBookDetailPage(BuildContext context) =>
+      Navigator.pushNamed(context, AppRoutes.bookDetailPage);
 }

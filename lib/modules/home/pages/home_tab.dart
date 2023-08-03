@@ -32,10 +32,10 @@ class HomeTabView extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 const HeaderWithSearchBox(),
-                TitleWithMoreBtn(title: "Recomended", press: () {}),
+                TitleWithMoreBtn(title: "Recomended Books", press: () {}),
                 const RecomendsPlants(),
-                TitleWithMoreBtn(title: "Featured Plants", press: () {}),
-                const FeaturedPlants(),
+                TitleWithMoreBtn(title: "Featured Books", press: () {}),
+                const FeaturedBooks(),
                 Dimens.boxHeight20,
               ],
             ),

@@ -61,6 +61,7 @@ class AyushOutlinedButton extends StatelessWidget {
           maximumSize: size != null ? Size.square(size!) : null,
           minimumSize: size != null ? Size.square(size!) : null,
           disabledBackgroundColor: Colors.white,
+          elevation: 10,
           side: const BorderSide(
             width: 0.8,
             color: AppColors.primaryColor,

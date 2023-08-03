@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kahani_box/utils/app_colors.dart';
 import 'package:kahani_box/utils/dimens.dart';
+import 'package:kahani_box/widgets/common/ripple_effect.dart';
 
 class RecomendBookCard extends StatelessWidget {
   const RecomendBookCard({
@@ -24,8 +25,10 @@ class RecomendBookCard extends StatelessWidget {
       width: size.width * 0.4,
       child: Column(
         children: <Widget>[
-          Image.asset(image!),
-          GestureDetector(
+          ClipRRect(
+              borderRadius: Dimens.circularBorderRadius,
+              child: Image.asset(image!)),
+          RippleEffect(
             onTap: press,
             child: Container(
               padding: Dimens.edgeA10,
@@ -49,8 +52,9 @@ class RecomendBookCard extends StatelessWidget {
                     text: TextSpan(
                       children: [
                         TextSpan(
-                            text: "$title\n".toUpperCase(),
-                            style: Theme.of(context).textTheme.button),
+                          text: "$title\n".toUpperCase(),
+                          style: Theme.of(context).textTheme.labelLarge,
+                        ),
                         TextSpan(
                           text: "$country".toUpperCase(),
                           style: TextStyle(
@@ -65,7 +69,7 @@ class RecomendBookCard extends StatelessWidget {
                     '\$$price',
                     style: Theme.of(context)
                         .textTheme
-                        .button
+                        .labelLarge
                         ?.copyWith(color: AppColors.primaryColor),
                   )
                 ],

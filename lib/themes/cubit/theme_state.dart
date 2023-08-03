@@ -5,7 +5,7 @@ const String kThemeModeKey = 'themeMode';
 const String kSystemMode = 'system';
 const String kLightMode = 'light';
 const String kDarkMode = 'dark';
-const String kDefaultFontFamily = 'HKGrotesk';
+const String kDefaultFontFamily = 'Calibri';
 
 class ThemeState {
   final String? themeMode;

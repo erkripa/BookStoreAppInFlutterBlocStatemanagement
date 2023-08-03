@@ -24,7 +24,9 @@ class ApplicationBloc extends Bloc<ApplicationEvent, ApplicationState> {
   ];
 
   FutureOr<void> _handlePage(
-      ChangePageEvent event, Emitter<ApplicationState> emit) {
+    ChangePageEvent event,
+    Emitter<ApplicationState> emit,
+  ) {
     emit(state.copyWith(currentPageIndex: event.index, pages: pages));
   }
 

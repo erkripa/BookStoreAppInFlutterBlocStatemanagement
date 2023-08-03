@@ -13,14 +13,17 @@ class ProfileTabView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final lightIconColor = Theme.of(context).textTheme.titleLarge?.color;
     return Scaffold(
       appBar: AyushAppBar(
         title: "Profile",
         titleCenter: true,
-        leadingIcon: Icons.menu,
+        leadingIcon: Icons.menu_open_outlined,
+        backBtnColor: lightIconColor,
         actions: [
           AyushIconButton(
             icon: Icons.more_vert_rounded,
+            iconColor: lightIconColor,
             onTap: () {},
           )
         ],

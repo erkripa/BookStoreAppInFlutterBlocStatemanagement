@@ -1,7 +1,6 @@
 import 'package:kahani_box/modules/application/bloc/application_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'components/application_bottom_navbar.dart';
 
 class ApplicationPage extends StatelessWidget {

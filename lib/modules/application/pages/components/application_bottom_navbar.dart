@@ -92,7 +92,7 @@ class AppLicationBottomNavigationBar extends StatelessWidget {
   ) {
     return BottomNavItem(
       icon: Icons.video_library_outlined,
-      title: "Search",
+      title: "Explore",
       iconColor: Theme.of(context).textTheme.bodyLarge!.color,
       isActive: state.currentPageIndex == 1,
       itemsCount: 5,
@@ -122,7 +122,7 @@ class AppLicationBottomNavigationBar extends StatelessWidget {
   ) {
     return BottomNavItem(
       icon: Icons.subscriptions_outlined,
-      title: "Jobs",
+      title: "Library",
       iconColor: Theme.of(context).textTheme.bodyLarge!.color,
       isActive: state.currentPageIndex == 3,
       itemsCount: 5,

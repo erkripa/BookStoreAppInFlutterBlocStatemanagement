@@ -1,4 +1,4 @@
 final Map<String, String> enUs = {
   'hi': 'Hi',
-  'app_name': 'Ayushona',
+  'app_name': 'Kahaani Box',
 };

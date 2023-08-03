@@ -7,9 +7,9 @@ import 'package:flutter/services.dart';
 mixin LightThemeMixin {
   SystemUiOverlayStyle lightSystemUiOverlayStyle() =>
       const SystemUiOverlayStyle(
-        statusBarColor: Colors.white,
+        statusBarColor: AppColors.primaryColor,
         statusBarBrightness: Brightness.light,
-        statusBarIconBrightness: Brightness.dark,
+        statusBarIconBrightness: Brightness.light,
         systemNavigationBarColor: Colors.white,
         systemNavigationBarDividerColor: Colors.transparent,
         systemNavigationBarIconBrightness: Brightness.dark,
@@ -18,7 +18,7 @@ mixin LightThemeMixin {
   AppBarTheme lightAppBarTheme() {
     return AppBarTheme(
       backgroundColor: AppColors.primaryColor,
-      elevation: -0.9,
+      elevation: 0,
       shadowColor: Colors.transparent,
       systemOverlayStyle: lightSystemUiOverlayStyle(),
     );
