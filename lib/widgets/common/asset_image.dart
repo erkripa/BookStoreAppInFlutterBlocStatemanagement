@@ -12,6 +12,7 @@ class AyushAssetImage extends StatelessWidget {
     this.maxHeight,
     this.scale,
     this.fit,
+    this.isRadius = false,
   }) : super(key: key);
 
   final String imgAsset;
@@ -21,6 +22,7 @@ class AyushAssetImage extends StatelessWidget {
   final double? maxHeight;
   final double? scale;
   final BoxFit? fit;
+  final bool isRadius;
 
   @override
   Widget build(BuildContext context) {
@@ -31,16 +33,20 @@ class AyushAssetImage extends StatelessWidget {
         maxWidth: maxWidth ?? Dimens.screenWidth,
         maxHeight: maxHeight ?? Dimens.screenHeight,
       ),
-      child: Image.asset(
-        imgAsset,
-        fit: fit ?? BoxFit.contain,
-        errorBuilder: (ctx, url, err) => const Icon(
-          CupertinoIcons.info,
-          color: AppColors.errorColor,
+      child: ClipRRect(
+        borderRadius:
+            isRadius ? Dimens.circularBorderRadius : BorderRadius.zero,
+        child: Image.asset(
+          imgAsset,
+          fit: fit ?? BoxFit.contain,
+          errorBuilder: (ctx, url, err) => const Icon(
+            CupertinoIcons.info,
+            color: AppColors.errorColor,
+          ),
+          width: width,
+          height: height,
+          scale: scale ?? 1.0,
         ),
-        width: width,
-        height: height,
-        scale: scale ?? 1.0,
       ),
     );
   }

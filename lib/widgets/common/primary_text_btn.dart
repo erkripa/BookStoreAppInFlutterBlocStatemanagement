@@ -41,6 +41,7 @@ class AyushTextButton extends StatelessWidget {
           shape: isCircle ? null : rectangleShape,
           maximumSize: size != null ? Size.square(size!) : null,
           minimumSize: size != null ? Size.square(size!) : null,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         child: label != null
             ? Text(

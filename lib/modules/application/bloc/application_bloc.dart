@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:kahani_box/modules/explore/page/explore_tab.dart';
 import 'package:kahani_box/modules/home/pages/home_tab.dart';
 import 'package:kahani_box/modules/profile/profile_tab.dart';
 import 'package:kahani_box/widgets/common/keep_alive_page%20copy.dart';
@@ -17,7 +18,7 @@ class ApplicationBloc extends Bloc<ApplicationEvent, ApplicationState> {
   //pages
   final pages = [
     const KeepAlivePage(child: HomeTabView()),
-    KeepAlivePage(child: Container(color: Colors.amber)),
+    const KeepAlivePage(child: ExploreTab()),
     KeepAlivePage(child: Container(color: Colors.green)),
     KeepAlivePage(child: Container(color: Colors.pink)),
     const KeepAlivePage(child: ProfileTabView()),
