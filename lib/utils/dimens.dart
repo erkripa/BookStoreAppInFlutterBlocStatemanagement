@@ -61,6 +61,7 @@ class Dimens {
   static double oneHundredFifty = 150.r;
   static double oneHundredNinty = 190.r;
   static double oneHundredTwenty = 120.r;
+  static double oneHundredTen = 110.r;
   static double twoHundred10 = 210.r;
   static double pointEight = 0.8.r;
   static double pointFive = 0.5.r;
